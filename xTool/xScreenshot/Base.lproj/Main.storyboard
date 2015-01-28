@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <scenes>
@@ -655,17 +656,25 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="320" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="2BD2035D-2C69-43CB-9502-98A250C2B77A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="eae-dq-wn4">
+                        <toolbar key="toolbar" implicitIdentifier="2BD2035D-2C69-43CB-9502-98A250C2B77A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="eae-dq-wn4">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="4Dj-UB-keM"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Me5-MG-eZu"/>
-                                <toolbarItem implicitItemIdentifier="64A453B5-74D1-447C-AF06-39DF5A3025EE" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSRefreshTemplate" id="ULk-o1-F5V"/>
-                                <toolbarItem implicitItemIdentifier="5F7DDDA2-7883-4077-AF79-D2F4B7E8F3EB" label="Snap" paletteLabel="Snap" tag="-1" image="NSComputer" id="56A-Ax-NUH">
+                                <toolbarItem implicitItemIdentifier="64A453B5-74D1-447C-AF06-39DF5A3025EE" label="Refresh" paletteLabel="Refresh" tag="-1" image="ios7-refresh-empty" id="ULk-o1-F5V">
+                                    <connections>
+                                        <action selector="clickedRefresh:" target="B8D-0N-5wS" id="jKA-Pd-S2c"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="5F7DDDA2-7883-4077-AF79-D2F4B7E8F3EB" label="Snap" paletteLabel="Snap" tag="-1" image="ios7-camera" id="56A-Ax-NUH">
                                     <connections>
                                         <action selector="clickedSnap:" target="B8D-0N-5wS" id="HcI-Jb-iRN"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="Share" paletteLabel="Share" tag="-1" image="NSShareTemplate" id="fY3-9K-ZLK"/>
+                                <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="More" paletteLabel="More" tag="-1" image="ios7-more" id="fY3-9K-ZLK">
+                                    <connections>
+                                        <action selector="clickedMore:" target="B8D-0N-5wS" id="gJN-pp-JoP"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ULk-o1-F5V"/>
@@ -677,7 +686,8 @@
                         </toolbar>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <outlet property="iconRefresh" destination="ULk-o1-F5V" id="LEv-Bf-LhC"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="X9v-C4-wsC"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -691,29 +701,16 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTt-WV-Yrq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSIconViewTemplate" id="1tc-YC-ykI"/>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="qTt-WV-Yrq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4Vf-9j-hAs"/>
-                            <constraint firstAttribute="bottom" secondItem="qTt-WV-Yrq" secondAttribute="bottom" id="DCW-Ld-qJY"/>
-                            <constraint firstItem="qTt-WV-Yrq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Znm-aw-M6M"/>
-                            <constraint firstAttribute="trailing" secondItem="qTt-WV-Yrq" secondAttribute="trailing" id="l9X-Sn-ALd"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1004"/>
+            <point key="canvasLocation" x="74" y="981"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSComputer" width="32" height="32"/>
-        <image name="NSIconViewTemplate" width="10" height="10"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
-        <image name="NSShareTemplate" width="11" height="16"/>
+        <image name="ios7-camera" width="32" height="32"/>
+        <image name="ios7-more" width="32" height="32"/>
+        <image name="ios7-refresh-empty" width="32" height="32"/>
     </resources>
 </document>

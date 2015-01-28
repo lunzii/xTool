@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CIDR_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libiconv.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libiconv.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libobjc.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libobjc.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libxml2.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libxml2.dylib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libimobiledevice/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libimobiledevice/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libimobiledevice/common">
+      <sourceFolder url="file://$MODULE_DIR$/../../libimobiledevice/common" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libimobiledevice/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../libimobiledevice/src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libimobiledevice/tools">
+      <sourceFolder url="file://$MODULE_DIR$/../../libimobiledevice/tools" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libplist/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libplist/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libplist/libcnary">
+      <sourceFolder url="file://$MODULE_DIR$/../../libplist/libcnary" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libplist/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../libplist/src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/examples">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/examples" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/libusb">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/libusb" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusbmuxd/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusbmuxd/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusbmuxd/common">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusbmuxd/common" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusbmuxd/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusbmuxd/src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$" />
+    <content url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libplist.a">
+      <sourceFolder url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libplist.a" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusb-1.0.0.a">
+      <sourceFolder url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusb-1.0.0.a" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusbmuxd.a">
+      <sourceFolder url="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusbmuxd.a" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
