@@ -1,6 +1,6 @@
 //
-//  xScreenshotTests.m
-//  xScreenshotTests
+//  xSnapTests.m
+//  xSnapTests
 //
 //  Created by olunx on 15/1/28.
 //  Copyright (c) 2015年 olunx. All rights reserved.
@@ -9,11 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 
-@interface xScreenshotTests : XCTestCase
+@interface xSnapTests : XCTestCase
 
 @end
 
-@implementation xScreenshotTests
+@implementation xSnapTests
 
 - (void)setUp {
     [super setUp];

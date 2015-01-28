@@ -1,6 +1,6 @@
 //
-//  main.m
-//  xScreenshot
+//  ViewController.h
+//  xSnap
 //
 //  Created by olunx on 15/1/26.
 //  Copyright (c) 2015年 olunx. All rights reserved.
@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, const char * argv[]) {
-    return NSApplicationMain(argc, argv);
-}
+@interface ViewController : NSViewController
+
+
+@end
+
