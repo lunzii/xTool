@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimelyView">
+        <attr name="size_width" format="integer" />
+        <attr name="size_width_small" format="integer" />
+        <attr name="size_height" format="integer" />
+        <attr name="size_height_small" format="integer" />
+    </declare-styleable>
+</resources>

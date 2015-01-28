@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.olunx.xface.octocat">
+    <uses-feature android:name="android.hardware.type.watch" />
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher" android:theme="@android:style/Theme.DeviceDefault">
+
+        <activity
+            android:name=".MainActivity"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:label="Octocat"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+            <meta-data
+                android:name="com.google.android.clockwork.home.preview"
+                android:resource="@drawable/pic_116" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.android.clockwork.home.category.HOME_BACKGROUND" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

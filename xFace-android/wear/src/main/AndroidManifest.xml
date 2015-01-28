@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.olunx.xface" >
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- face timely simple -->
+        <activity
+            android:name=".FaceTimelySeconds"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:label="xTimelySimple"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+            <meta-data
+                android:name="com.google.android.clockwork.home.preview"
+                android:resource="@drawable/preview_seconds" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.android.clockwork.home.category.HOME_BACKGROUND" />
+            </intent-filter>
+        </activity>
+
+        <!-- face timely seconds -->
+        <activity
+            android:name=".FaceTimelySimple"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:label="xTimelySecond"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+            <meta-data
+                android:name="com.google.android.clockwork.home.preview"
+                android:resource="@drawable/preview_simple" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.android.clockwork.home.category.HOME_BACKGROUND" />
+            </intent-filter>
+        </activity>
+
+        <!-- face digital-->
+        <activity
+            android:name=".FaceDigital"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:label="xDigital"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+            <meta-data
+                android:name="com.google.android.clockwork.home.preview"
+                android:resource="@drawable/ic_launcher" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.android.clockwork.home.category.HOME_BACKGROUND" />
+            </intent-filter>
+        </activity>
+
+        <!-- face matrix -->
+        <activity
+            android:name=".FaceMatrix"
+            android:allowEmbedded="true"
+            android:exported="true"
+            android:label="xMatrix"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+            <meta-data
+                android:name="com.google.android.clockwork.home.preview"
+                android:resource="@drawable/preview_matrix" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.android.clockwork.home.category.HOME_BACKGROUND" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
