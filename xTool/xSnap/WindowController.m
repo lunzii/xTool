@@ -7,6 +7,8 @@
 //
 
 #import "WindowController.h"
+#import "ImageMounter.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -80,7 +82,7 @@
 - (IBAction)clickedRefresh:(id)sender {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *path = [paths objectAtIndex:0];
-    NSLog(@"path: %@", [path stringByAppendingPathComponent:@"xScreenshot"]);
+    NSLog(@"path: %@", [path stringByAppendingPathComponent:@"xSnap"]);
     if(self.checkDevice){
         [self takeScreenShot];
     }else{
@@ -151,7 +153,14 @@
 }
 
 - (IBAction)clickedSnap:(id)sender {
+    NSLog(@"mount");
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DeveloperDiskImage" ofType:@"dmg"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]){
+        [ImageMounter mount:[path UTF8String]];
+    }
+}
 
+- (IBAction)clickedRecord:(id)sender {
 }
 
 - (IBAction)clickedMore:(id)sender {

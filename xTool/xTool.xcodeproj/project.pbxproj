@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F0EDC2F732F51F53699B0A /* ImageMounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F0EB097158E1736ABD2B8A /* ImageMounter.m */; };
+		C8756E3E1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */; };
+		C8756E3F1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */; };
 		C8A09A771A78854100A7AC47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A761A78854100A7AC47 /* AppDelegate.m */; };
 		C8A09A791A78854100A7AC47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A781A78854100A7AC47 /* main.m */; };
 		C8A09A7C1A78854100A7AC47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A7B1A78854100A7AC47 /* ViewController.m */; };
@@ -15,7 +18,6 @@
 		C8A09A8D1A78854100A7AC47 /* xToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A8C1A78854100A7AC47 /* xToolTests.m */; };
 		C8A09ABC1A78859D00A7AC47 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AA81A78857000A7AC47 /* libimobiledevice.a */; };
 		C8A09AC51A7885D100A7AC47 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AC41A7885D100A7AC47 /* libxml2.dylib */; };
-		C8A09AC71A7885D700A7AC47 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AC61A7885D700A7AC47 /* libiconv.dylib */; };
 		C8EBE2391A7902B200B9CE37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBE2381A7902B200B9CE37 /* AppDelegate.m */; };
 		C8EBE23B1A7902B200B9CE37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBE23A1A7902B200B9CE37 /* main.m */; };
 		C8EBE23E1A7902B200B9CE37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBE23D1A7902B200B9CE37 /* ViewController.m */; };
@@ -28,7 +30,7 @@
 		C8EBE25B1A79031800B9CE37 /* libusb-1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AF11A78863B00A7AC47 /* libusb-1.0.0.a */; };
 		C8EBE25C1A79031800B9CE37 /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AF21A78863B00A7AC47 /* libusbmuxd.a */; };
 		C8EBE25D1A79031D00B9CE37 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AC41A7885D100A7AC47 /* libxml2.dylib */; };
-		C8EBE25E1A79032400B9CE37 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AC61A7885D700A7AC47 /* libiconv.dylib */; };
+		C8ED82691A7A234F00EAE0CE /* ImageMounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F0EB097158E1736ABD2B8A /* ImageMounter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64F0EB097158E1736ABD2B8A /* ImageMounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMounter.m; sourceTree = "<group>"; };
+		64F0ED5A2FD7248BAEE80719 /* ImageMounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMounter.h; sourceTree = "<group>"; };
+		C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
+		C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
 		C8A09A701A78854100A7AC47 /* xTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A09A741A78854100A7AC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A09A751A78854100A7AC47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,7 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A09AC71A7885D700A7AC47 /* libiconv.dylib in Frameworks */,
 				C8A09AC51A7885D100A7AC47 /* libxml2.dylib in Frameworks */,
 				C8A09ABC1A78859D00A7AC47 /* libimobiledevice.a in Frameworks */,
 			);
@@ -175,7 +180,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8EBE25E1A79032400B9CE37 /* libiconv.dylib in Frameworks */,
 				C8EBE25D1A79031D00B9CE37 /* libxml2.dylib in Frameworks */,
 				C8EBE2591A79031800B9CE37 /* libimobiledevice.a in Frameworks */,
 				C8EBE25A1A79031800B9CE37 /* libplist.a in Frameworks */,
@@ -194,6 +198,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8756E311A7A3CB6002FE3E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */,
+				C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C8A09A671A78854100A7AC47 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		C8EBE2341A7902B200B9CE37 /* xSnap */ = {
 			isa = PBXGroup;
 			children = (
+				C8756E311A7A3CB6002FE3E5 /* Resources */,
 				C8EBE2561A7902F600B9CE37 /* WindowController.h */,
 				C8EBE2571A7902F600B9CE37 /* WindowController.m */,
 				C8EBE2371A7902B200B9CE37 /* AppDelegate.h */,
@@ -299,6 +313,8 @@
 				C8EBE23F1A7902B200B9CE37 /* Images.xcassets */,
 				C8EBE2411A7902B200B9CE37 /* Main.storyboard */,
 				C8EBE2351A7902B200B9CE37 /* Supporting Files */,
+				64F0EB097158E1736ABD2B8A /* ImageMounter.m */,
+				64F0ED5A2FD7248BAEE80719 /* ImageMounter.h */,
 			);
 			path = xSnap;
 			sourceTree = "<group>";
@@ -548,7 +564,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8756E3F1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature in Resources */,
 				C8EBE2401A7902B200B9CE37 /* Images.xcassets in Resources */,
+				C8756E3E1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg in Resources */,
 				C8EBE2431A7902B200B9CE37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +588,7 @@
 				C8A09A7C1A78854100A7AC47 /* ViewController.m in Sources */,
 				C8A09A791A78854100A7AC47 /* main.m in Sources */,
 				C8A09A771A78854100A7AC47 /* AppDelegate.m in Sources */,
+				64F0EDC2F732F51F53699B0A /* ImageMounter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8ED82691A7A234F00EAE0CE /* ImageMounter.m in Sources */,
 				C8EBE23E1A7902B200B9CE37 /* ViewController.m in Sources */,
 				C8EBE2581A7902F600B9CE37 /* WindowController.m in Sources */,
 				C8EBE23B1A7902B200B9CE37 /* main.m in Sources */,
@@ -796,6 +816,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					../../libplist/include/,
 					../../libimobiledevice/include/,
+					../../libimobiledevice/,
 				);
 				INFOPLIST_FILE = xSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -819,6 +840,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					../../libplist/include/,
 					../../libimobiledevice/include/,
+					../../libimobiledevice/,
 				);
 				INFOPLIST_FILE = xSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -904,6 +926,7 @@
 				C8EBE2521A7902B200B9CE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8EBE2531A7902B200B9CE37 /* Build configuration list for PBXNativeTarget "xSnapTests" */ = {
 			isa = XCConfigurationList;
@@ -912,6 +935,7 @@
 				C8EBE2551A7902B200B9CE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
