@@ -90,8 +90,6 @@
     }
 }
 
-
-
 - (BOOL) checkDevice{
     BOOL result = NO;
     idevice_t device = NULL;
@@ -104,60 +102,130 @@
     return result;
 }
 
-- (void) takeScreenShot{
+- (NSString *) getOSVersion{
+    NSString *version = nil;
+
+    char* udid = NULL;
     idevice_t device = NULL;
     lockdownd_client_t lckd = NULL;
-    lockdownd_error_t ldret = LOCKDOWN_E_UNKNOWN_ERROR;
+
+    if (IDEVICE_E_SUCCESS != idevice_new(&device, udid)) {
+        printf("No device found, is it plugged in?\n");
+        return nil;
+    }
+    free(udid);
+
+    if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(device, &lckd, "ideviceimagemounter")) {
+        printf("ERROR: Could not connect to lockdown.\n");
+        idevice_free(device);
+        return nil;
+    }
+
+    plist_t pver = NULL;
+    char *product_version = NULL;
+    lockdownd_get_value(lckd, NULL, "ProductVersion", &pver);
+    if (pver && plist_get_node_type(pver) == PLIST_STRING) {
+        plist_get_string_val(pver, &product_version);
+    }
+    int product_version_major = 0;
+    int product_version_minor = 0;
+    if (product_version) {
+        if (sscanf(product_version, "%d.%d.%*d", &product_version_major, &product_version_minor) == 2) {
+            version = [NSString stringWithFormat:@"%d.%d", product_version_major, product_version_minor];
+        }
+    }
+
+    if (lckd) {
+        lockdownd_client_free(lckd);
+    }
+    idevice_free(device);
+    if(pver){
+        free(pver);
+    }
+    if(product_version){
+        free(product_version);
+    }
+    NSLog(version);
+    return version;
+}
+
+- (void) mountImage{
+    [self showTextView:@"正在初始化设备..."];
+    NSString *version = [NSString stringWithFormat:@"%@/DeveloperDiskImage", [self getOSVersion]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:version ofType:@"dmg"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]){
+        if([ImageMounter mount:[path UTF8String]]){
+            [self showTextView:@"设备初始化成功！\n点击刷新按钮开始截图！"];
+        }else{
+            [self showTextView:@"设备连接失败！\n请重新连接你的设备，并保持屏幕点亮。"];
+        }
+    }
+}
+
+- (void) takeScreenShot{
+    char *msg = NULL;
+    boolean_t success = false;
+
+    char *imgdata = NULL;
+    uint64_t imgsize = 0;
+
+    idevice_t device = NULL;
+    lockdownd_client_t lckd = NULL;
     screenshotr_client_t shotr = NULL;
     lockdownd_service_descriptor_t service = NULL;
     char *udid = NULL;
 
-    if (IDEVICE_E_SUCCESS != idevice_new(&device, udid)) {
-        [self showTextView:@"设备未连接"];
-        return;
-    }
-    if (LOCKDOWN_E_SUCCESS != (ldret = lockdownd_client_new_with_handshake(device, &lckd, NULL))) {
-        idevice_free(device);
-        free(udid);
-        [self showTextView:[NSString stringWithFormat:@"设备连接失败，错误码 %d", ldret]];
-        return;
-    }
-    lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &service);
-    lockdownd_client_free(lckd);
-    if (service && service->port > 0) {
-        if (screenshotr_client_new(device, service, &shotr) == SCREENSHOTR_E_SUCCESS){
-            char *imgdata = NULL;
-            uint64_t imgsize = 0;
-            if (screenshotr_take_screenshot(shotr, &imgdata, &imgsize) == SCREENSHOTR_E_SUCCESS) {
-                NSData *data = [NSData dataWithBytes:imgdata length:imgsize];
-                NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
-                NSImage *image = [[NSImage alloc] init];
-                [image addRepresentation:imageRep];
-                [self showImageView:image];
-                free(imgdata);
-            } else {
-                [self showTextView:@"获取截图失败！"];
+    if (IDEVICE_E_SUCCESS == idevice_new(&device, udid)) {
+        if (LOCKDOWN_E_SUCCESS == lockdownd_client_new_with_handshake(device, &lckd, NULL)) {
+            lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &service);
+            lockdownd_client_free(lckd);
+            if (service && service->port > 0) {
+                if (screenshotr_client_new(device, service, &shotr) == SCREENSHOTR_E_SUCCESS){
+                    if (screenshotr_take_screenshot(shotr, &imgdata, &imgsize) == SCREENSHOTR_E_SUCCESS) {
+                        success = true;
+                    } else {
+                        msg = "截图失败！";
+                    }
+                    screenshotr_client_free(shotr);
+                }else{
+                    msg = "截图失败！";
+                }
+            }else{
+//                [self mountImage];
             }
-            screenshotr_client_free(shotr);
-        }else{
-            [self showTextView:@"获取截图失败！"];
+        }else {
+            msg = "设备连接失败！";
         }
     }else{
-        [self showTextView:@"未开启开发者功能！"];
+        msg = "设备未连接！";
     }
 
-    if (service)
-        lockdownd_service_descriptor_free(service);
+    if(success == true){
+        NSData *data = [NSData dataWithBytes:imgdata length:imgsize];
+        NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
+        NSImage *image = [[NSImage alloc] init];
+        [image addRepresentation:imageRep];
+        [self showImageView:image];
+        free(imgdata);
+    }else{
+        [self showTextView:[NSString stringWithUTF8String:msg]];
+    }
 
-    idevice_free(device);
+    if (service){
+        lockdownd_service_descriptor_free(service);
+    }
+    if(device){
+        idevice_free(device);
+    }
+    if(udid){
+        free(udid);
+    }
+    if(msg){
+        free(msg);
+    }
 }
 
 - (IBAction)clickedSnap:(id)sender {
-    NSLog(@"mount");
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"DeveloperDiskImage" ofType:@"dmg"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]){
-        [ImageMounter mount:[path UTF8String]];
-    }
 }
 
 - (IBAction)clickedRecord:(id)sender {

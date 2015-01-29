@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		64F0EDC2F732F51F53699B0A /* ImageMounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F0EB097158E1736ABD2B8A /* ImageMounter.m */; };
-		C8756E3E1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */; };
-		C8756E3F1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */; };
+		C8756E5C1A7A7874002FE3E5 /* 7.0 in Resources */ = {isa = PBXBuildFile; fileRef = C8756E581A7A7874002FE3E5 /* 7.0 */; };
+		C8756E5D1A7A7874002FE3E5 /* 7.1 in Resources */ = {isa = PBXBuildFile; fileRef = C8756E591A7A7874002FE3E5 /* 7.1 */; };
+		C8756E5E1A7A7874002FE3E5 /* 8.0 in Resources */ = {isa = PBXBuildFile; fileRef = C8756E5A1A7A7874002FE3E5 /* 8.0 */; };
+		C8756E5F1A7A7874002FE3E5 /* 8.1 in Resources */ = {isa = PBXBuildFile; fileRef = C8756E5B1A7A7874002FE3E5 /* 8.1 */; };
 		C8A09A771A78854100A7AC47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A761A78854100A7AC47 /* AppDelegate.m */; };
 		C8A09A791A78854100A7AC47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A781A78854100A7AC47 /* main.m */; };
 		C8A09A7C1A78854100A7AC47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A09A7B1A78854100A7AC47 /* ViewController.m */; };
@@ -123,8 +125,10 @@
 /* Begin PBXFileReference section */
 		64F0EB097158E1736ABD2B8A /* ImageMounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMounter.m; sourceTree = "<group>"; };
 		64F0ED5A2FD7248BAEE80719 /* ImageMounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMounter.h; sourceTree = "<group>"; };
-		C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
-		C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
+		C8756E581A7A7874002FE3E5 /* 7.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.0; sourceTree = "<group>"; };
+		C8756E591A7A7874002FE3E5 /* 7.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.1; sourceTree = "<group>"; };
+		C8756E5A1A7A7874002FE3E5 /* 8.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.0; sourceTree = "<group>"; };
+		C8756E5B1A7A7874002FE3E5 /* 8.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.1; sourceTree = "<group>"; };
 		C8A09A701A78854100A7AC47 /* xTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A09A741A78854100A7AC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A09A751A78854100A7AC47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -201,8 +205,10 @@
 		C8756E311A7A3CB6002FE3E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C8756E3C1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg */,
-				C8756E3D1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature */,
+				C8756E581A7A7874002FE3E5 /* 7.0 */,
+				C8756E591A7A7874002FE3E5 /* 7.1 */,
+				C8756E5A1A7A7874002FE3E5 /* 8.0 */,
+				C8756E5B1A7A7874002FE3E5 /* 8.1 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -564,9 +570,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8756E3F1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg.signature in Resources */,
+				C8756E5F1A7A7874002FE3E5 /* 8.1 in Resources */,
+				C8756E5C1A7A7874002FE3E5 /* 7.0 in Resources */,
+				C8756E5D1A7A7874002FE3E5 /* 7.1 in Resources */,
+				C8756E5E1A7A7874002FE3E5 /* 8.0 in Resources */,
 				C8EBE2401A7902B200B9CE37 /* Images.xcassets in Resources */,
-				C8756E3E1A7A3CD6002FE3E5 /* DeveloperDiskImage.dmg in Resources */,
 				C8EBE2431A7902B200B9CE37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

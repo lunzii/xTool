@@ -31,19 +31,19 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     return fread(buf, 1, size, (FILE*)userdata);
 }
 
-+(BOOL) mount:(char *)image{
++(BOOL) mount:(const char *)image{
     BOOL mountResult = NO;
 
-    char *image_type = strdup("Developer");
-    char *image_path = image;
+    const char *image_path = image;
     char *image_sig_path = NULL;
     asprintf(&image_sig_path, "%s.signature", image_path);
+    char *image_type = strdup("Developer");
 
     struct stat fst;
     stat(image_path, &fst);
     size_t image_size = fst.st_size;
 
-    char *target_name = "PublicStaging/staging.dimage";
+    char *target_name = strdup("PublicStaging/staging.dimage");
     char *mount_name = NULL;
     asprintf(&mount_name, "/private/var/mobile/Media/%s", target_name);
 
@@ -100,6 +100,7 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     err = mobile_image_mounter_mount_image(mim, mount_name, sig, sig_length, image_type, &result);
     if (err == MOBILE_IMAGE_MOUNTER_E_SUCCESS) {
         printf("Mount succeed.\n");
+        mountResult = YES;
     }else{
         printf("Mount failed.\n");
     }
@@ -121,7 +122,9 @@ leave:
     if(image_type){
         free(image_type);
     }
-
+    if(target_name){
+        free(target_name);
+    }
     if(mount_name){
         free(mount_name);
     }
