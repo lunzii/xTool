@@ -9,6 +9,8 @@
 #import "WindowController.h"
 #import "ImageMounter.h"
 
+#import <MBProgressHUD.h>
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -80,9 +82,6 @@
 }
 
 - (IBAction)clickedRefresh:(id)sender {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
-    NSLog(@"path: %@", [path stringByAppendingPathComponent:@"xSnap"]);
     if(self.checkDevice){
         [self takeScreenShot];
     }else{
@@ -150,85 +149,137 @@
 }
 
 - (void) mountImage{
-    [self showTextView:@"正在初始化设备..."];
-    NSString *version = [NSString stringWithFormat:@"%@/DeveloperDiskImage", [self getOSVersion]];
-    NSString *path = [[NSBundle mainBundle] pathForResource:version ofType:@"dmg"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]){
-        if([ImageMounter mount:[path UTF8String]]){
-            [self showTextView:@"设备初始化成功！\n点击刷新按钮开始截图！"];
-        }else{
-            [self showTextView:@"设备连接失败！\n请重新连接你的设备，并保持屏幕点亮。"];
-        }
-    }
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
+    hud.dimBackground = YES;
+    hud.labelText = @"初始化设备...";
+    __typeof (self) __weak weakSelf = self;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        BOOL result = NO;
+        NSString *version = [NSString stringWithFormat:@"%@/DeveloperDiskImage", [self getOSVersion]];
+        NSString *path = [[NSBundle mainBundle] pathForResource:version ofType:@"dmg"];
+        result = [ImageMounter mount:[path UTF8String]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+            if(result){
+                [weakSelf takeScreenShot];
+            }else{
+                [weakSelf showTextView:@"设备初始化失败！\n请重新连接设备！"];
+            }
+        });
+    });
 }
 
 - (void) takeScreenShot{
-    char *msg = NULL;
-    boolean_t success = false;
+    __typeof (self) __weak weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
+    hud.dimBackground = YES;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        char *msg = NULL;
+        boolean_t success = false;
+        boolean_t init = true;
 
-    char *imgdata = NULL;
-    uint64_t imgsize = 0;
+        char *imgdata = NULL;
+        uint64_t imgsize = 0;
 
-    idevice_t device = NULL;
-    lockdownd_client_t lckd = NULL;
-    screenshotr_client_t shotr = NULL;
-    lockdownd_service_descriptor_t service = NULL;
-    char *udid = NULL;
+        idevice_t device = NULL;
+        lockdownd_client_t lckd = NULL;
+        screenshotr_client_t shotr = NULL;
+        lockdownd_service_descriptor_t service = NULL;
+        char *udid = NULL;
 
-    if (IDEVICE_E_SUCCESS == idevice_new(&device, udid)) {
-        if (LOCKDOWN_E_SUCCESS == lockdownd_client_new_with_handshake(device, &lckd, NULL)) {
-            lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &service);
-            lockdownd_client_free(lckd);
-            if (service && service->port > 0) {
-                if (screenshotr_client_new(device, service, &shotr) == SCREENSHOTR_E_SUCCESS){
-                    if (screenshotr_take_screenshot(shotr, &imgdata, &imgsize) == SCREENSHOTR_E_SUCCESS) {
-                        success = true;
-                    } else {
+        if (IDEVICE_E_SUCCESS == idevice_new(&device, udid)) {
+            if (LOCKDOWN_E_SUCCESS == lockdownd_client_new_with_handshake(device, &lckd, NULL)) {
+                lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &service);
+                lockdownd_client_free(lckd);
+                if (service && service->port > 0) {
+                    if (screenshotr_client_new(device, service, &shotr) == SCREENSHOTR_E_SUCCESS){
+                        if (screenshotr_take_screenshot(shotr, &imgdata, &imgsize) == SCREENSHOTR_E_SUCCESS) {
+                            success = true;
+                        } else {
+                            msg = "截图失败！";
+                        }
+                        screenshotr_client_free(shotr);
+                    }else{
                         msg = "截图失败！";
                     }
-                    screenshotr_client_free(shotr);
                 }else{
-                    msg = "截图失败！";
+                    init = false;
+                    msg = "设备未初始化！";
+                }
+            }else {
+                msg = "设备连接失败！";
+            }
+        }else{
+            msg = "设备未连接！";
+        }
+        if (service){
+            lockdownd_service_descriptor_free(service);
+        }
+        if(device){
+            idevice_free(device);
+        }
+        if(udid){
+            free(udid);
+        }
+        if(msg){
+            free(msg);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+            if(init == true){
+                if(success == true){
+                    NSData *data = [NSData dataWithBytes:imgdata length:imgsize];
+                    NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
+                    NSImage *image = [[NSImage alloc] init];
+                    [image addRepresentation:imageRep];
+                    [weakSelf showImageView:image];
+                    free(imgdata);
+                }else{
+                    [weakSelf showTextView:[NSString stringWithUTF8String:msg]];
                 }
             }else{
-//                [self mountImage];
+                [weakSelf mountImage];
             }
-        }else {
-            msg = "设备连接失败！";
-        }
-    }else{
-        msg = "设备未连接！";
-    }
+        });
+    });
 
-    if(success == true){
-        NSData *data = [NSData dataWithBytes:imgdata length:imgsize];
-        NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
-        NSImage *image = [[NSImage alloc] init];
-        [image addRepresentation:imageRep];
-        [self showImageView:image];
-        free(imgdata);
-    }else{
-        [self showTextView:[NSString stringWithUTF8String:msg]];
-    }
-
-    if (service){
-        lockdownd_service_descriptor_free(service);
-    }
-    if(device){
-        idevice_free(device);
-    }
-    if(udid){
-        free(udid);
-    }
-    if(msg){
-        free(msg);
-    }
 }
 
 - (IBAction)clickedSnap:(id)sender {
-}
+    __typeof (self) __weak weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
+    hud.dimBackground = YES;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        BOOL result = false;
+        if(weakSelf.imageView && weakSelf.imageView.image){
+            NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex: 0];
+            NSData *data = [imgRep representationUsingType: NSPNGFileType properties: nil];
 
-- (IBAction)clickedRecord:(id)sender {
+            NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
+            NSString *dir = [[dirs objectAtIndex:0] stringByAppendingPathComponent:@"xSnap"];
+            if(![[NSFileManager defaultManager] fileExistsAtPath:dir]){
+                [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:NO attributes:nil error:nil];
+            }
+            NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
+            [formatter setDateFormat:@"YYYYMMdd-hhmmssSSS"];
+            NSString *date =  [formatter stringFromDate:[NSDate date]];
+            NSString *timeStamp = [[NSString alloc] initWithFormat:@"%@", date];
+            NSString *path = [NSString stringWithFormat:@"%@/%@.png", dir, timeStamp];
+//            NSLog(@"path: %@", path);
+            result = [data writeToFile:path atomically: NO];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(result){
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"Saved in ~/Pictures";
+                [hud hide:YES afterDelay:2];
+            }else{
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"Save failed.";
+                [hud hide:YES afterDelay:2];
+            }
+        });
+    });
 }
 
 - (IBAction)clickedMore:(id)sender {

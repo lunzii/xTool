@@ -10,6 +10,9 @@
     <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libxml2.dylib">
       <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libxml2.dylib" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../MBProgressHUD-OSX">
+      <sourceFolder url="file://$MODULE_DIR$/../../MBProgressHUD-OSX" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../libimobiledevice/Xcode">
       <sourceFolder url="file://$MODULE_DIR$/../../libimobiledevice/Xcode" isTestSource="false" />
     </content>

@@ -33,6 +33,7 @@
 		C8EBE25C1A79031800B9CE37 /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AF21A78863B00A7AC47 /* libusbmuxd.a */; };
 		C8EBE25D1A79031D00B9CE37 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A09AC41A7885D100A7AC47 /* libxml2.dylib */; };
 		C8ED82691A7A234F00EAE0CE /* ImageMounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F0EB097158E1736ABD2B8A /* ImageMounter.m */; };
+		C8F2173D1A7B231700EA8BC5 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F2173A1A7B231000EA8BC5 /* libMBProgressHUD.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,20 @@
 			remoteGlobalIDString = C8EBE2321A7902B100B9CE37;
 			remoteInfo = xSnap;
 		};
+		C8F217391A7B231000EA8BC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8F2172A1A7B231000EA8BC5 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F2170A1A7B21A100EA8BC5;
+			remoteInfo = MBProgressHUD;
+		};
+		C8F2173B1A7B231000EA8BC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8F2172A1A7B231000EA8BC5 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F217151A7B21A100EA8BC5;
+			remoteInfo = MBProgressHUDTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +176,7 @@
 		C8EBE24E1A7902B200B9CE37 /* xSnapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xSnapTests.m; sourceTree = "<group>"; };
 		C8EBE2561A7902F600B9CE37 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C8EBE2571A7902F600B9CE37 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		C8F2172A1A7B231000EA8BC5 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../MBProgressHUD-OSX/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F2173D1A7B231700EA8BC5 /* libMBProgressHUD.a in Frameworks */,
 				C8EBE25D1A79031D00B9CE37 /* libxml2.dylib in Frameworks */,
 				C8EBE2591A79031800B9CE37 /* libimobiledevice.a in Frameworks */,
 				C8EBE25A1A79031800B9CE37 /* libplist.a in Frameworks */,
@@ -216,6 +233,7 @@
 		C8A09A671A78854100A7AC47 = {
 			isa = PBXGroup;
 			children = (
+				C8F2172A1A7B231000EA8BC5 /* MBProgressHUD.xcodeproj */,
 				C8A09A961A78857000A7AC47 /* libimobiledevice.xcodeproj */,
 				C8A09A721A78854100A7AC47 /* xTool */,
 				C8A09A891A78854100A7AC47 /* xToolTests */,
@@ -351,6 +369,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C8F2172B1A7B231000EA8BC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8F2173A1A7B231000EA8BC5 /* libMBProgressHUD.a */,
+				C8F2173C1A7B231000EA8BC5 /* MBProgressHUDTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,6 +492,10 @@
 					ProductGroup = C8A09A971A78857000A7AC47 /* Products */;
 					ProjectRef = C8A09A961A78857000A7AC47 /* libimobiledevice.xcodeproj */;
 				},
+				{
+					ProductGroup = C8F2172B1A7B231000EA8BC5 /* Products */;
+					ProjectRef = C8F2172A1A7B231000EA8BC5 /* MBProgressHUD.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -545,6 +576,20 @@
 			fileType = "compiled.mach-o.executable";
 			path = idevicesyslog;
 			remoteRef = C8A09AB91A78857000A7AC47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C8F2173A1A7B231000EA8BC5 /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = C8F217391A7B231000EA8BC5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C8F2173C1A7B231000EA8BC5 /* MBProgressHUDTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MBProgressHUDTests.xctest;
+			remoteRef = C8F2173B1A7B231000EA8BC5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -825,6 +870,7 @@
 					../../libplist/include/,
 					../../libimobiledevice/include/,
 					../../libimobiledevice/,
+					"../../MBProgressHUD-OSX/",
 				);
 				INFOPLIST_FILE = xSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -849,6 +895,7 @@
 					../../libplist/include/,
 					../../libimobiledevice/include/,
 					../../libimobiledevice/,
+					"../../MBProgressHUD-OSX/",
 				);
 				INFOPLIST_FILE = xSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

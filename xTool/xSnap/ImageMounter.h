@@ -11,6 +11,6 @@
 
 @interface ImageMounter : NSObject
 
-+(BOOL) mount:(char *)image;
++(BOOL) mount:(const char *)image;
 
 @end

@@ -204,11 +204,6 @@
                                         <action selector="clickedSnap:" target="B8D-0N-5wS" id="HcI-Jb-iRN"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="776DE669-9FF4-4BD0-AEF8-25E43E5F5B35" label="Record" paletteLabel="Record" tag="-1" image="ios7-videocam" id="cyK-eQ-ANQ">
-                                    <connections>
-                                        <action selector="clickedRecord:" target="B8D-0N-5wS" id="4ou-S7-XyJ"/>
-                                    </connections>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="More" paletteLabel="More" tag="-1" image="ios7-more" id="fY3-9K-ZLK">
                                     <connections>
                                         <action selector="clickedMore:" target="B8D-0N-5wS" id="gJN-pp-JoP"/>
@@ -219,8 +214,6 @@
                                 <toolbarItem reference="ULk-o1-F5V"/>
                                 <toolbarItem reference="Me5-MG-eZu"/>
                                 <toolbarItem reference="56A-Ax-NUH"/>
-                                <toolbarItem reference="Me5-MG-eZu"/>
-                                <toolbarItem reference="cyK-eQ-ANQ"/>
                                 <toolbarItem reference="Me5-MG-eZu"/>
                                 <toolbarItem reference="fY3-9K-ZLK"/>
                             </defaultToolbarItems>
@@ -253,6 +246,5 @@
         <image name="ios7-camera" width="32" height="32"/>
         <image name="ios7-more" width="32" height="32"/>
         <image name="ios7-refresh-empty" width="32" height="32"/>
-        <image name="ios7-videocam" width="32" height="32"/>
     </resources>
 </document>
