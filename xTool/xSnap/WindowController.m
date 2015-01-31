@@ -30,7 +30,6 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     self.contentView = self.window.contentView;
-
     if(self.checkDevice){
         [self takeScreenShot];
     }else{
@@ -63,15 +62,32 @@
     }
 }
 
--(void)showImageView: (NSImage *)image{
+-(void)showImageView: (NSImage *)image width:(float)width height:(float)height{
+
+    float scale = 2;
+    if(height >= 1536){
+        scale = 4.0f;
+    }else if(height >= 1334){
+        scale = 3.0f;
+    }
+    width /= scale;
+    height /= scale;
+
     if(self.imageView == nil) {
         [self removeTextView];
         self.imageView = [[NSImageView alloc] init];
-        self.imageView.frame = CGRectMake(0, 0, 320, 480);
         [self.contentView addSubview:self.imageView];
+        self.imageView.frame = CGRectMake(0, 0, width, height);
         [self setFillConstraints:self.imageView toSuperView:self.contentView];
     }
+    self.imageView.frame = CGRectMake(0, 0, width, height);
     self.imageView.image = image;
+    float x = [NSScreen mainScreen].frame.size.width / 2 - width / 2;
+    float y = [NSScreen mainScreen].frame.size.height / 2 - height / 2;
+    [self.window setFrame:CGRectMake(x, y, width, height + 68) display:YES animate:YES];
+    NSLog(@"image width:%f height:%f", width, height);
+    NSLog(@"window width:%f height:%f", width, height);
+    NSLog(@"window x:%f y:%f", x, y);
 }
 
 -(void)removeImageView{
@@ -232,7 +248,7 @@
                     NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
                     NSImage *image = [[NSImage alloc] init];
                     [image addRepresentation:imageRep];
-                    [weakSelf showImageView:image];
+                    [weakSelf showImageView:image width:imageRep.pixelsWide height:imageRep.pixelsHigh];
                     free(imgdata);
                 }else{
                     [weakSelf showTextView:[NSString stringWithUTF8String:msg]];
