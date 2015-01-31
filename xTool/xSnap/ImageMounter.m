@@ -26,24 +26,23 @@
 
 }
 
-static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
-{
-    return fread(buf, 1, size, (FILE*)userdata);
+static ssize_t mim_upload_cb(void *buf, size_t size, void *userdata) {
+    return fread(buf, 1, size, (FILE *) userdata);
 }
 
-+(BOOL) mount:(const char *)image{
++ (BOOL)mount:(const char *)image {
     BOOL mountResult = NO;
 
     const char *image_path = image;
     char *image_sig_path = NULL;
     asprintf(&image_sig_path, "%s.signature", image_path);
-    char *image_type = strdup("Developer");
+    char *image_type = "Developer";
 
     struct stat fst;
     stat(image_path, &fst);
     size_t image_size = fst.st_size;
 
-    char *target_name = strdup("PublicStaging/staging.dimage");
+    char *target_name = "PublicStaging/staging.dimage";
     char *mount_name = NULL;
     asprintf(&mount_name, "/private/var/mobile/Media/%s", target_name);
 
@@ -65,7 +64,7 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     }
 
     lockdownd_start_service(lckd, "com.apple.mobile.mobile_image_mounter", &service);
-    if(MOBILE_IMAGE_MOUNTER_E_SUCCESS != mobile_image_mounter_new(device, service, &mim)){
+    if (MOBILE_IMAGE_MOUNTER_E_SUCCESS != mobile_image_mounter_new(device, service, &mim)) {
         printf("ERROR: Could not connect to mobile_image_mounter!\n");
         goto leave;
     }
@@ -73,7 +72,7 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
         lockdownd_service_descriptor_free(service);
         service = NULL;
     }
-    if(lckd){
+    if (lckd) {
         lockdownd_client_free(lckd);
         lckd = NULL;
     }
@@ -91,7 +90,7 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     err = mobile_image_mounter_upload_image(mim, image_type, image_size, sig, sig_length, mim_upload_cb, f);
     if (err == MOBILE_IMAGE_MOUNTER_E_SUCCESS) {
         printf("Upload succeed.\n");
-    }else{
+    } else {
         printf("Upload failed.\n");
     }
     fclose(f);
@@ -101,7 +100,7 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     if (err == MOBILE_IMAGE_MOUNTER_E_SUCCESS) {
         printf("Mount succeed.\n");
         mountResult = YES;
-    }else{
+    } else {
         printf("Mount failed.\n");
     }
     if (result) {
@@ -113,21 +112,23 @@ static ssize_t mim_upload_cb(void* buf, size_t size, void* userdata)
     /* free client */
     mobile_image_mounter_free(mim);
 
-leave:
+    leave:
     if (lckd) {
         lockdownd_client_free(lckd);
     }
-    idevice_free(device);
+    if (device) {
+        idevice_free(device);
+    }
 
-    if(image_type){
-        free(image_type);
-    }
-    if(target_name){
-        free(target_name);
-    }
-    if(mount_name){
-        free(mount_name);
-    }
+//    if(image_type){
+//        free(image_type);
+//    }
+//    if(target_name){
+//        free(target_name);
+//    }
+//    if(mount_name){
+//        free(mount_name);
+//    }
 //    if (image_path)
 //        free(image_path);
     if (image_sig_path)

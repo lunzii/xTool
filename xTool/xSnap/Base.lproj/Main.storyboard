@@ -24,7 +24,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Hide xScreenshot" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide xSnap" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -203,7 +203,7 @@
                                         <action selector="clickedSnap:" target="B8D-0N-5wS" id="HcI-Jb-iRN"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="More" paletteLabel="More" tag="-1" image="ios7-more" id="fY3-9K-ZLK">
+                                <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="Discover" paletteLabel="Discover" tag="-1" image="ios7-paperplane-outline" id="fY3-9K-ZLK">
                                     <connections>
                                         <action selector="clickedMore:" target="B8D-0N-5wS" id="gJN-pp-JoP"/>
                                     </connections>
@@ -243,7 +243,7 @@
     </scenes>
     <resources>
         <image name="ios7-camera" width="32" height="32"/>
-        <image name="ios7-more" width="32" height="32"/>
+        <image name="ios7-paperplane-outline" width="32" height="32"/>
         <image name="ios7-refresh-empty" width="32" height="32"/>
     </resources>
 </document>
