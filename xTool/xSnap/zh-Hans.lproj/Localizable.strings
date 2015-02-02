@@ -6,12 +6,12 @@
   Copyright (c) 2015年 olunx. All rights reserved.
 */
 
-device_connect_false = "Device does not connect.";
-device_connect_fail = "Device connect failed.";
-device_initialize = "Device initialitzing...";
-device_initialize_false = "Device does not initialitze.";
-device_initialize_fail = "Device initialitze failed.\n Please re-connect your device.";
-device_screenshot_fail = "Capture screen failed.";
+device_connect_false = "设备未连接";
+device_connect_fail = "设备连接失败";
+device_initialize = "设备初始化...";
+device_initialize_false = "设备未初始化";
+device_initialize_fail = "设备初始化失败\n 请重新连接你的设备";
+device_screenshot_fail = "截图失败";
 
-screenshot_save_success = "Saved in ~/Pictures.";
-screenshot_save_fail = "Save failed.";
+screenshot_save_success = "已保存 ~/图片";
+screenshot_save_fail = "保存失败";
