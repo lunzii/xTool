@@ -30,10 +30,11 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     self.contentView = self.window.contentView;
+
     if (self.checkDevice) {
         [self takeScreenShot];
     } else {
-        [self showTextView:@"设备未连接"];
+        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
     }
 }
 
@@ -101,7 +102,7 @@
     if (self.checkDevice) {
         [self takeScreenShot];
     } else {
-        [self showTextView:@"设备未连接"];
+        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
     }
 }
 
@@ -129,13 +130,11 @@
     lockdownd_client_t lckd = NULL;
 
     if (IDEVICE_E_SUCCESS != idevice_new(&device, udid)) {
-        printf("No device found, is it plugged in?\n");
         return nil;
     }
     free(udid);
 
     if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(device, &lckd, "ideviceimagemounter")) {
-        printf("ERROR: Could not connect to lockdown.\n");
         idevice_free(device);
         return nil;
     }
@@ -171,7 +170,7 @@
 - (void)mountImage {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;
-    hud.labelText = @"初始化设备...";
+    hud.labelText = NSLocalizedString(@"device_initialize", nil);
     __typeof(self) __weak weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         BOOL result = NO;
@@ -179,7 +178,7 @@
         NSString *dmgPath = [[NSBundle mainBundle] pathForResource:version ofType:@"dmg"];
 //        result = [ImageMounter mount:[path UTF8String]];
 
-        NSString *cmd = [[NSBundle mainBundle] pathForResource:@"ideviceimagemounter" ofType:nil];
+        NSString *cmd = [[NSBundle mainBundle] pathForResource:@"mounter" ofType:nil];
 
         NSTask *task = [[NSTask alloc] init];
         task.launchPath = cmd;
@@ -207,7 +206,7 @@
             if (result) {
                 [weakSelf takeScreenShot];
             } else {
-                [weakSelf showTextView:@"设备初始化失败！\n请重新连接设备！"];
+                [weakSelf showTextView:NSLocalizedString(@"device_initialize_fail", nil)];
             }
         });
     });
@@ -241,21 +240,21 @@
                         if (screenshotr_take_screenshot(shotr, &imgdata, &imgsize) == SCREENSHOTR_E_SUCCESS) {
                             success = true;
                         } else {
-                            msg = "截图失败！";
+                            msg = [NSLocalizedString(@"device_screenshot_fail", nil) UTF8String];
                         }
                         screenshotr_client_free(shotr);
                     } else {
-                        msg = "截图失败！";
+                        msg = [NSLocalizedString(@"device_screenshot_fail", nil) UTF8String];
                     }
                 } else {
                     init = false;
-                    msg = "设备未初始化！";
+                    msg = [NSLocalizedString(@"device_initialize_false", nil) UTF8String];
                 }
             } else {
-                msg = "设备连接失败！";
+                msg = [NSLocalizedString(@"device_connect_fail", nil) UTF8String];
             }
         } else {
-            msg = "设备未连接！";
+            msg = [NSLocalizedString(@"device_connect_false", nil) UTF8String];
         }
         if (service) {
             lockdownd_service_descriptor_free(service);
@@ -316,11 +315,11 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (result) {
                 hud.mode = MBProgressHUDModeText;
-                hud.labelText = @"Saved in ~/Pictures";
+                hud.labelText = NSLocalizedString(@"screenshot_save_success", nil);
                 [hud hide:YES afterDelay:2];
             } else {
                 hud.mode = MBProgressHUDModeText;
-                hud.labelText = @"Save failed.";
+                hud.labelText = NSLocalizedString(@"screenshot_save_fail", nil);
                 [hud hide:YES afterDelay:2];
             }
         });
