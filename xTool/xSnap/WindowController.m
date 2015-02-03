@@ -216,7 +216,7 @@
     __typeof(self) __weak weakSelf = self;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;
-    hud.labelText = @"正在截图...";
+    hud.labelText = NSLocalizedString(@"screenshot_refreshing", nil);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         char *msg = NULL;
         boolean_t success = false;
@@ -294,7 +294,35 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        BOOL result = false;
+        BOOL result = YES;
+        if (weakSelf.imageView && weakSelf.imageView.image) {
+            NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex:0];
+            NSData *data = [imgRep representationUsingType:NSPNGFileType properties:nil];
+
+            NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+            [pasteboard declareTypes:[NSArray arrayWithObject:NSPasteboardTypePNG] owner:nil];
+            result = [pasteboard setData:data forType:NSPasteboardTypePNG];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (result) {
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = NSLocalizedString(@"screenshot_snap_success", nil);
+                [hud hide:YES afterDelay:2];
+            } else {
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = NSLocalizedString(@"screenshot_snap_fail", nil);
+                [hud hide:YES afterDelay:2];
+            }
+        });
+    });
+}
+
+- (IBAction)clickedSave:(id)sender {
+    __typeof(self) __weak weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
+    hud.dimBackground = YES;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        BOOL result = YES;
         if (weakSelf.imageView && weakSelf.imageView.image) {
             NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex:0];
             NSData *data = [imgRep representationUsingType:NSPNGFileType properties:nil];

@@ -19,6 +19,7 @@
 
 - (IBAction)clickedRefresh:(id)sender;
 - (IBAction)clickedSnap:(id)sender;
+- (IBAction)clickedSave:(id)sender;
 - (IBAction)clickedMore:(id)sender;
 
 @end

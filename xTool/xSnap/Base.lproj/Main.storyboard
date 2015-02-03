@@ -127,6 +127,11 @@
                                         <action selector="clickedSnap:" target="B8D-0N-5wS" id="HcI-Jb-iRN"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="CF97B752-C7A1-4041-BF35-8C076D76DA74" label="Save" paletteLabel="Save" tag="-1" image="ios7-box" id="aJt-aQ-Po3">
+                                    <connections>
+                                        <action selector="clickedSave:" target="B8D-0N-5wS" id="cTe-9x-zMx"/>
+                                    </connections>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="54C2295B-3055-4189-A62D-460158503BAD" label="Discover" paletteLabel="Discover" tag="-1" image="ios7-paperplane-outline" id="fY3-9K-ZLK">
                                     <connections>
                                         <action selector="clickedMore:" target="B8D-0N-5wS" id="gJN-pp-JoP"/>
@@ -137,6 +142,8 @@
                                 <toolbarItem reference="ULk-o1-F5V"/>
                                 <toolbarItem reference="Me5-MG-eZu"/>
                                 <toolbarItem reference="56A-Ax-NUH"/>
+                                <toolbarItem reference="Me5-MG-eZu"/>
+                                <toolbarItem reference="aJt-aQ-Po3"/>
                                 <toolbarItem reference="Me5-MG-eZu"/>
                                 <toolbarItem reference="fY3-9K-ZLK"/>
                             </defaultToolbarItems>
@@ -166,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ios7-box" width="32" height="32"/>
         <image name="ios7-camera" width="32" height="32"/>
         <image name="ios7-paperplane-outline" width="32" height="32"/>
         <image name="ios7-refresh-empty" width="32" height="32"/>
