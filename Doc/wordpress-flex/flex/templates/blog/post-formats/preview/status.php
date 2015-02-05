@@ -1,0 +1,1 @@
+<div class="post-status"><?php the_content(); ?></div>
