@@ -294,7 +294,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        BOOL result = YES;
+        BOOL result = NO;
         if (weakSelf.imageView && weakSelf.imageView.image) {
             NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex:0];
             NSData *data = [imgRep representationUsingType:NSPNGFileType properties:nil];
@@ -322,7 +322,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        BOOL result = YES;
+        BOOL result = NO;
         if (weakSelf.imageView && weakSelf.imageView.image) {
             NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex:0];
             NSData *data = [imgRep representationUsingType:NSPNGFileType properties:nil];
