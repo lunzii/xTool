@@ -145,6 +145,7 @@
 		C833380D1A7F41EF001660F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C833380E1A7F41EF001660F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C833380F1A7F41EF001660F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		C84880511A84956E00C91009 /* xSnap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xSnap.entitlements; sourceTree = "<group>"; };
 		C8756E581A7A7874002FE3E5 /* 7.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.0; sourceTree = "<group>"; };
 		C8756E591A7A7874002FE3E5 /* 7.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.1; sourceTree = "<group>"; };
 		C8756E5A1A7A7874002FE3E5 /* 8.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.0; sourceTree = "<group>"; };
@@ -336,6 +337,7 @@
 		C8EBE2341A7902B200B9CE37 /* xSnap */ = {
 			isa = PBXGroup;
 			children = (
+				C84880511A84956E00C91009 /* xSnap.entitlements */,
 				C8756E311A7A3CB6002FE3E5 /* Resources */,
 				C8EBE2561A7902F600B9CE37 /* WindowController.h */,
 				C8EBE2571A7902F600B9CE37 /* WindowController.m */,
@@ -478,6 +480,15 @@
 					};
 					C8EBE2321A7902B100B9CE37 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = N4BBCE23Y9;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					C8EBE2471A7902B200B9CE37 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -882,6 +893,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -903,6 +916,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -911,6 +925,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -928,6 +944,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

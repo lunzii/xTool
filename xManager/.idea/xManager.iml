@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CIDR_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libiconv.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libiconv.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libobjc.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libobjc.dylib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libmtp/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libmtp/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libmtp/examples">
+      <sourceFolder url="file://$MODULE_DIR$/../../libmtp/examples" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libmtp/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../libmtp/src" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/Xcode">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/Xcode" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/examples">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/examples" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../libusb/libusb">
+      <sourceFolder url="file://$MODULE_DIR$/../../libusb/libusb" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
