@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C802C4E31A87A3B300DA9917 /* mtp.c in Sources */ = {isa = PBXBuildFile; fileRef = C802C4E11A87A3B300DA9917 /* mtp.c */; };
+		C802C4EB1A87A4F300DA9917 /* device.c in Sources */ = {isa = PBXBuildFile; fileRef = C802C4E91A87A4F300DA9917 /* device.c */; };
 		C84FEE371A8667B100DA6E06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FEE361A8667B100DA6E06 /* AppDelegate.m */; };
 		C84FEE391A8667B100DA6E06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FEE381A8667B100DA6E06 /* main.m */; };
 		C84FEE3C1A8667B100DA6E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FEE3B1A8667B100DA6E06 /* ViewController.m */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C802C4E11A87A3B300DA9917 /* mtp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mtp.c; sourceTree = "<group>"; };
+		C802C4E21A87A3B300DA9917 /* mtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtp.h; sourceTree = "<group>"; };
+		C802C4E91A87A4F300DA9917 /* device.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device.c; sourceTree = "<group>"; };
+		C802C4EA1A87A4F300DA9917 /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
 		C84FEE301A8667B100DA6E06 /* xManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84FEE341A8667B100DA6E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84FEE351A8667B100DA6E06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 		C84FEE321A8667B100DA6E06 /* xManager */ = {
 			isa = PBXGroup;
 			children = (
+				C802C4E11A87A3B300DA9917 /* mtp.c */,
+				C802C4E21A87A3B300DA9917 /* mtp.h */,
 				C84FEE971A87174E00DA6E06 /* xManager.entitlements */,
 				C84FEE351A8667B100DA6E06 /* AppDelegate.h */,
 				C84FEE361A8667B100DA6E06 /* AppDelegate.m */,
@@ -136,6 +144,8 @@
 				C84FEE331A8667B100DA6E06 /* Supporting Files */,
 				C84FEE6F1A86689F00DA6E06 /* WindowController.h */,
 				C84FEE701A86689F00DA6E06 /* WindowController.m */,
+				C802C4E91A87A4F300DA9917 /* device.c */,
+				C802C4EA1A87A4F300DA9917 /* device.h */,
 			);
 			path = xManager;
 			sourceTree = "<group>";
@@ -329,6 +339,8 @@
 				C84FEE3C1A8667B100DA6E06 /* ViewController.m in Sources */,
 				C84FEE711A86689F00DA6E06 /* WindowController.m in Sources */,
 				C84FEE391A8667B100DA6E06 /* main.m in Sources */,
+				C802C4EB1A87A4F300DA9917 /* device.c in Sources */,
+				C802C4E31A87A3B300DA9917 /* mtp.c in Sources */,
 				C84FEE371A8667B100DA6E06 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
