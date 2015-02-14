@@ -165,7 +165,6 @@
 		C8A09A8C1A78854100A7AC47 /* xToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xToolTests.m; sourceTree = "<group>"; };
 		C8A09A961A78857000A7AC47 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libimobiledevice.xcodeproj; path = ../../libimobiledevice/Xcode/libimobiledevice.xcodeproj; sourceTree = "<group>"; };
 		C8A09AC41A7885D100A7AC47 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		C8A09AC61A7885D700A7AC47 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		C8A09AF01A78863B00A7AC47 /* libplist.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libplist.a; path = "../../../../Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libplist.a"; sourceTree = "<group>"; };
 		C8A09AF11A78863B00A7AC47 /* libusb-1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libusb-1.0.0.a"; path = "../../../../Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusb-1.0.0.a"; sourceTree = "<group>"; };
 		C8A09AF21A78863B00A7AC47 /* libusbmuxd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libusbmuxd.a; path = "../../../../Library/Developer/Xcode/DerivedData/xTool-djoibpcrsoanokcnfxxmbinacmav/Build/Products/Debug/libusbmuxd.a"; sourceTree = "<group>"; };
@@ -328,7 +327,6 @@
 				C8A09AF01A78863B00A7AC47 /* libplist.a */,
 				C8A09AF11A78863B00A7AC47 /* libusb-1.0.0.a */,
 				C8A09AF21A78863B00A7AC47 /* libusbmuxd.a */,
-				C8A09AC61A7885D700A7AC47 /* libiconv.dylib */,
 				C8A09AC41A7885D100A7AC47 /* libxml2.dylib */,
 			);
 			name = Frameworks;

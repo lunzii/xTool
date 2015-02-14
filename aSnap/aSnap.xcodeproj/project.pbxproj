@@ -471,6 +471,7 @@
 				C8FAFAE51A8F029400FDD7CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8FAFAE61A8F029400FDD7CB /* Build configuration list for PBXNativeTarget "aSnapTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +480,7 @@
 				C8FAFAE81A8F029400FDD7CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
