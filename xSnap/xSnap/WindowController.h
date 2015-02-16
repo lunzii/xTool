@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ViewController.h"
 
 @interface WindowController : NSWindowController
 
