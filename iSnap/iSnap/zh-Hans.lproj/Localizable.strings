@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  iSnap
+
+  Created by olunx on 15/2/1.
+  Copyright (c) 2015年 olunx. All rights reserved.
+*/
+
+device_connect_false = "设备未连接";
+device_connect_fail = "设备连接失败";
+device_initialize = "设备初始化...";
+device_initialize_false = "设备未初始化";
+device_initialize_fail = "设备初始化失败\n 请重新连接你的设备";
+device_screenshot_fail = "截图失败";
+
+screenshot_refreshing = "正在截图...";
+
+screenshot_save_success = "已保存 ~/图片";
+screenshot_save_fail = "保存失败";
+
+screenshot_snap_success = "复制成功";
+screenshot_snap_fail = "复制失败";

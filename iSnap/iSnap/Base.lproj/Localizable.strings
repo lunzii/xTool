@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  iSnap
+
+  Created by olunx on 15/2/1.
+  Copyright (c) 2015年 olunx. All rights reserved.
+*/
+
+device_connect_false = "Device does not connect.";
+device_connect_fail = "Device connect failed.";
+device_initialize = "Device initialitzing...";
+device_initialize_false = "Device does not initialitze.";
+device_initialize_fail = "Device initialitze failed.\n Please re-connect your device.";
+device_screenshot_fail = "Capture screen failed.";
+
+screenshot_refreshing = "Snaping...";
+
+screenshot_save_success = "Saved in ~/Pictures.";
+screenshot_save_fail = "Save failed.";
+
+screenshot_snap_success = "Snap in Pasteboard.";
+screenshot_snap_fail = "Snap failed.";
