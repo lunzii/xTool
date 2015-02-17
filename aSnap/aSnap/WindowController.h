@@ -21,4 +21,12 @@
 - (IBAction)clickedSave:(id)sender;
 - (IBAction)clickedMore:(id)sender;
 
+typedef NS_ENUM(NSInteger, DeviceStatus){
+    DeviceFound = 0,
+    DeviceFoundMutiple = 1,
+    DeviceNotFound = 2,
+    DeviceNotAuthorize = 3,
+    DeviceError = 4,
+};
+
 @end

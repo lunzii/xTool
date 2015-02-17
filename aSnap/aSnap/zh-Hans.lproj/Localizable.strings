@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  aSnap
+
+  Created by olunx on 15/2/1.
+  Copyright (c) 2015年 olunx. All rights reserved.
+*/
+
+device_status_not_found = "没有发现设备";
+device_status_not_authorize = "设备未授权\n请查看你的手机";
+device_status_erro = "设备连接错误";
+device_screenshot_fail = "截图失败";
+
+screenshot_refreshing = "正在截图...";
+
+screenshot_save_success = "已保存 ~/图片";
+screenshot_save_fail = "保存失败";
+
+screenshot_snap_success = "复制成功";
+screenshot_snap_fail = "复制失败";

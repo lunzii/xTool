@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C853D58D1A90FBE90046A6F2 /* WindowController.m */; };
+		C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E4938B1A937A8C00EF062D /* Localizable.strings */; };
 		C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */; };
 		C8FAFACC1A8F029400FDD7CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFACB1A8F029400FDD7CB /* main.m */; };
 		C8FAFAD11A8F029400FDD7CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8FAFAD01A8F029400FDD7CB /* Images.xcassets */; };
@@ -26,20 +27,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C8FAFAC21A8F029400FDD7CB;
 			remoteInfo = aSnap;
-		};
-		C8FAFAF01A8F02F300FDD7CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C8FAFAEB1A8F02F300FDD7CB /* libadb.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C8EF17971A8E2631004350E8;
-			remoteInfo = libadb;
-		};
-		C8FAFAF21A8F02F300FDD7CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C8FAFAEB1A8F02F300FDD7CB /* libadb.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C8EF18081A8E2836004350E8;
-			remoteInfo = adb;
 		};
 		C8FC07081A9245E900720C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -60,6 +47,9 @@
 /* Begin PBXFileReference section */
 		C853D58C1A90FBE90046A6F2 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C853D58D1A90FBE90046A6F2 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		C8E493841A9379B200EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		C8E4938C1A937A8C00EF062D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C8E4938E1A937A9400EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C8FAFAC31A8F029400FDD7CB /* aSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FAFAC71A8F029400FDD7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,7 +61,6 @@
 		C8FAFADE1A8F029400FDD7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8FAFADF1A8F029400FDD7CB /* aSnapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aSnapTests.m; sourceTree = "<group>"; };
 		C8FAFAE91A8F02A500FDD7CB /* aSnap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = aSnap.entitlements; sourceTree = "<group>"; };
-		C8FAFAEB1A8F02F300FDD7CB /* libadb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libadb.xcodeproj; path = ../../libadb/Xcode/libadb.xcodeproj; sourceTree = "<group>"; };
 		C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../MBProgressHUD-OSX/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
 		C8FC07141A92481300720C6F /* adb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = adb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +106,7 @@
 		C8FAFAC51A8F029400FDD7CB /* aSnap */ = {
 			isa = PBXGroup;
 			children = (
+				C8E4938B1A937A8C00EF062D /* Localizable.strings */,
 				C8FC07131A92479100720C6F /* Resources */,
 				C8FAFAE91A8F02A500FDD7CB /* aSnap.entitlements */,
 				C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */,
@@ -160,18 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */,
-				C8FAFAEB1A8F02F300FDD7CB /* libadb.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8FAFAEC1A8F02F300FDD7CB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C8FAFAF11A8F02F300FDD7CB /* libadb.a */,
-				C8FAFAF31A8F02F300FDD7CB /* adb */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C8FC07021A9245E900720C6F /* Products */ = {
@@ -259,15 +239,12 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C8FAFABA1A8F029400FDD7CB;
 			productRefGroup = C8FAFAC41A8F029400FDD7CB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = C8FAFAEC1A8F02F300FDD7CB /* Products */;
-					ProjectRef = C8FAFAEB1A8F02F300FDD7CB /* libadb.xcodeproj */;
-				},
 				{
 					ProductGroup = C8FC07021A9245E900720C6F /* Products */;
 					ProjectRef = C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */;
@@ -282,20 +259,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C8FAFAF11A8F02F300FDD7CB /* libadb.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libadb.a;
-			remoteRef = C8FAFAF01A8F02F300FDD7CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C8FAFAF31A8F02F300FDD7CB /* adb */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = adb;
-			remoteRef = C8FAFAF21A8F02F300FDD7CB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		C8FC07091A9245E900720C6F /* libMBProgressHUD.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -318,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8FC07151A92481300720C6F /* adb in Resources */,
+				C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */,
 				C8FC06D81A9234A200720C6F /* Info.plist in Resources */,
 				C8FC06D71A92349D00720C6F /* aSnap.entitlements in Resources */,
 				C8FAFAD11A8F029400FDD7CB /* Images.xcassets in Resources */,
@@ -364,10 +328,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C8E4938B1A937A8C00EF062D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8E4938C1A937A8C00EF062D /* Base */,
+				C8E4938E1A937A9400EF062D /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C8FAFAD21A8F029400FDD7CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C8FAFAD31A8F029400FDD7CB /* Base */,
+				C8E493841A9379B200EF062D /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -409,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -445,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};

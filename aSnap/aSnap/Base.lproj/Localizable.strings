@@ -1,16 +1,14 @@
 /* 
   Localizable.strings
-  xTool
+  aSnap
 
-  Created by olunx on 15/2/1.
+  Created by olunx on 15/2/15.
   Copyright (c) 2015年 olunx. All rights reserved.
 */
 
-device_connect_false = "Device does not connect.";
-device_connect_fail = "Device connect failed.";
-device_initialize = "Device initialitzing...";
-device_initialize_false = "Device does not initialitze.";
-device_initialize_fail = "Device initialitze failed.\n Please re-connect your device.";
+device_status_not_found = "Device not found.";
+device_status_not_authorize = "Device not authorize.\nPlease check your phone.";
+device_status_erro = "Device connect error.";
 device_screenshot_fail = "Capture screen failed.";
 
 screenshot_refreshing = "Snaping...";

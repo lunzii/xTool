@@ -20,11 +20,7 @@
     [super windowDidLoad];
     self.contentView = self.window.contentView;
 
-    if (self.checkDevice) {
-        [self takeScreenShot];
-    } else {
-        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
-    }
+    [self clickedRefresh:nil];
 }
 
 - (void)showTextView:(NSString *)text {
@@ -75,9 +71,6 @@
     float x = [NSScreen mainScreen].frame.size.width / 2 - width / 2;
     float y = [NSScreen mainScreen].frame.size.height / 2 - height / 2;
     [self.window setFrame:CGRectMake(x, y, width, height + 68) display:YES animate:YES];
-//    NSLog(@"image width:%f height:%f", width, height);
-//    NSLog(@"window width:%f height:%f", width, height);
-//    NSLog(@"window x:%f y:%f", x, y);
 }
 
 - (void)removeImageView {
@@ -88,11 +81,19 @@
 }
 
 - (IBAction)clickedRefresh:(id)sender {
-    [self takeScreenShot];
-    if (self.checkDevice) {
-        [self takeScreenShot];
-    } else {
-        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
+    switch (self.checkDevice){
+        case DeviceFound:
+            [self takeScreenShot];
+            break;
+        case DeviceNotAuthorize:
+            [self showTextView:NSLocalizedString(@"device_status_not_authorize", nil)];
+            break;
+        case DeviceNotFound:
+            [self showTextView:NSLocalizedString(@"device_status_not_found", nil)];
+            break;
+        case DeviceError:
+            [self showTextView:NSLocalizedString(@"device_status_erro", nil)];
+            break;
     }
 }
 
@@ -100,14 +101,24 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://lunzii.com"]];
 }
 
-- (BOOL)checkDevice {
-    BOOL result = NO;
-    NSString *string = [self runCMD:@[@"devices", @"-l"]];
-    NSLog(string);
-//    if ([string rangeOfString:@"Status: Complete"].location != NSNotFound) {
-//        result = YES;
-//    }
-
+- (NSInteger)checkDevice {
+    NSInteger result = DeviceNotFound;
+    NSString *devices = [self runCMD:@[@"devices", @"-l"]];
+    NSLog(@"%@", devices);
+    NSArray *array = [devices componentsSeparatedByString:@"\n"];
+    if([array count] > 2){
+        for(int i=1;i< [array count];i++){
+            NSString *device = [array objectAtIndex:i];
+            NSLog(@"device: %@", device);
+            if([device rangeOfString:@"unauthorized"].location != NSNotFound){
+                result = DeviceNotAuthorize;
+                break;
+            }else if ([device rangeOfString:@"device"].location != NSNotFound) {
+                result = DeviceFound;
+                break;
+            }
+        }
+    }
     return result;
 }
 
@@ -129,6 +140,10 @@
                                  encoding:NSUTF8StringEncoding];
 }
 
+- (NSString *)getPicturePath{
+    NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
+    return [[dirs objectAtIndex:0] stringByAppendingPathComponent:@"aSnap"];
+}
 
 - (void)takeScreenShot {
     __typeof(self) __weak weakSelf = self;
@@ -136,20 +151,22 @@
     hud.dimBackground = YES;
     hud.labelText = NSLocalizedString(@"screenshot_refreshing", nil);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        BOOL success = NO;
-        NSString *string = [self runCMD:@[@"shell", @"screencap", @"/sdcard/test.png"]];
+        NSString *string = [self runCMD:@[@"shell", @"screencap", @"/sdcard/.asnap.png"]];
         NSLog(string);
-        string = [self runCMD:@[@"pull",  @"/sdcard/test.png", @"/Users/olunx/Pictures"]];
+        NSString *storeFile = [[weakSelf getPicturePath] stringByAppendingPathComponent:@".asnap.png"];
+        NSLog(storeFile);
+        string = [self runCMD:@[@"pull",  @"/sdcard/.asnap.png", storeFile]];
         NSLog(string);
-
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hide:YES];
-            if([[NSFileManager defaultManager] fileExistsAtPath:@"/Users/olunx/Pictures/test.png"]){
-                NSData *data = [NSData dataWithContentsOfFile:@"/Users/olunx/Pictures/test.png"];
+            if([[NSFileManager defaultManager] fileExistsAtPath:storeFile]){
+                NSData *data = [NSData dataWithContentsOfFile:storeFile];
                 NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc] initWithData:data];
                 NSImage *image = [[NSImage alloc] init];
                 [image addRepresentation:imageRep];
                 [weakSelf showImageView:image width:imageRep.pixelsWide height:imageRep.pixelsHigh];
+            }else{
+                [self showTextView:NSLocalizedString(@"device_screenshot_fail", nil)];
             }
         });
     });
@@ -194,8 +211,7 @@
             NSBitmapImageRep *imgRep = [[weakSelf.imageView.image representations] objectAtIndex:0];
             NSData *data = [imgRep representationUsingType:NSPNGFileType properties:nil];
 
-            NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
-            NSString *dir = [[dirs objectAtIndex:0] stringByAppendingPathComponent:@"aSnap"];
+            NSString *dir = [weakSelf getPicturePath];
             if (![[NSFileManager defaultManager] fileExistsAtPath:dir]) {
                 [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:NO attributes:nil error:nil];
             }

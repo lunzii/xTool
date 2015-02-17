@@ -4,12 +4,6 @@
     <content url="file://$MODULE_DIR$/../../MBProgressHUD-OSX">
       <sourceFolder url="file://$MODULE_DIR$/../../MBProgressHUD-OSX" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../libadb/Xcode">
-      <sourceFolder url="file://$MODULE_DIR$/../../libadb/Xcode" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../libadb/adb">
-      <sourceFolder url="file://$MODULE_DIR$/../../libadb/adb" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
