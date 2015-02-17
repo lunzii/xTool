@@ -49,11 +49,11 @@
 }
 
 - (void)showImageView:(NSImage *)image width:(float)width height:(float)height {
-
+//    NSLog(@"image width:%f height:%f", width, height);
     float scale = 2;
-    if (height >= 1536) {
+    if (height >= 2560) {
         scale = 4.0f;
-    } else if (height >= 1334) {
+    } else if (height >= 1280) {
         scale = 3.0f;
     }
     width /= scale;
