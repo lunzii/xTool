@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Dante - Developer Documentation</title>
+		
+		<link rel="shortcut icon" href="assets/favicon.ico" />
+		
+		<!-- CORE CSS -->
+		<link href="css/styles.css" rel="stylesheet">
+		
+	</head>
+		
+		<body>
+		
+		<div id="docs-info">
+			<h1>Dante - Developers Documentation</h1>
+			<h4>Designed &amp; Developed by Swift Ideas &copy; 2013</h4>
+			<div class="links">
+				<a href="http://support.swiftideas.net" target="_blank">Get Support</a><a href="http://dante.swiftideas.net/documentation" target="_blank">User Documentation</a><a href="http://support.swiftideas.net/knowledgebase" target="_blank">Knowledgebase</a><a href="http://dante.swiftideas.net/changelog">View Changelog</a><a href="http://dante.swiftideas.net" target="_blank">View Theme Demo</a>
+			</div>
+		</div>
+		
+		<div id="docs-contents">
+			
+			<!-- NAV -->
+			<ul id="tab-nav">
+				<li><a href="#introduction">Introduction</a></li>
+				<li class="divider"><span></span></li>
+				<li><span>Theme Assets</span></li>
+				<li><a href="#header">Header</a></li>
+				<li><a href="#footer">Footer</a></li>
+				<li><a href="#menus">Menus</a></li>
+				<li><a href="#pagination">Pagination</a></li>
+				<li><a href="#comments">Comments</a></li>
+				<li><a href="#sidebars">Sidebars</a></li>
+				<li class="divider"><span></span></li>
+				<li><span>Content</span></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#post-formats">Post Formats</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#media">Media</a></li>
+				<li><a href="#formatting">Formatting</a></li>
+				<li class="divider"><span></span></li>
+				<li><span>Theme Functions</span></li>
+				<li><a href="#custom-styles">Custom Styles</a></li>
+				<li><a href="#customizer">Color Customizer</a></li>
+				<li><a href="#theme-functions">Theme Functions</a></li>
+				<li><a href="#theme-options">Theme Options</a></li>
+				<li class="divider"><span></span></li>
+				<li><span>Page Builder</span></li>
+				<li><a href="#page-builder-assets">Page Builder Assets</a></li>
+			</ul>
+			
+			<!-- CONTENT -->
+			<div id="introduction">
+				<h2>Introduction</h2>
+				<p>This documentation reference is provided for developers who wish to extend or modify Dante, preferably through the provided Child theme (to keep your changes when the main theme is updated).</p>
+				<h3>How to use this documentation</h3>
+				<p>This documentation is meant to be a reference for customers who wish to extend and/or modify Dante, beyond it's standard functionality. We have structured it in a way that sections the specific areas of the theme, and then references the files where you can find the specific functions. Below is an example for a file reference:</p>
+				<div class="file-block">
+					<span>@filename:</span> example.php<br/>
+					<span>@location:</span> /directory or root<br/>
+				</div>
+				<p>Then this is a function reference:</p>
+				<div class="function-reference">
+					<div class="heading">sf_function()</div>
+					<div class="explanation">
+					This area is used to explain the function.
+					</div>
+				</div>
+				<h3>Child Theme</h3>
+				<p>If you are thinking about modifying/extending the core functionality of Dante, then we thoroughly recommend that you use the provided child theme. This will allow you to override the functions you can find detailed in this documentation, and add files that you have modified to reference. This way when the main theme is updated, your changes will not be lost.</p>
+				<h3>Documentation Improvements</h3>
+				<p>If you have any recommendations or requests for improving this documentation, then please let us know. We are always looking for ways to make it easier for our users, and we'll be happy to hear from you. Please contact us via the form on our <a href="http://themeforest.net/user/SwiftIdeas" target="_blank">ThemeForest profile</a>.</p>
+			</div>
+			
+			<div id="header">
+				<h2>Header</h2>
+				<p>The Header of the theme consists of the &lt;head&gt; tag, header search and super search, top bar, top header, and header (including main menu).</p>
+				<div class="file-block">
+					<span>@filename:</span> header.php<br/>
+					<span>@location:</span> root<br/>
+				</div>
+				<p>The header.php file sets up the body classes and header structure for the theme. It adds in the meta information provided through the theme options, and provides header content through a number of functions referenced in the /includes/sf-header.php file.</p>
+				<div class="hr"></div>
+				<div class="file-block">
+					<span>@filename:</span> sf-header.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<p>The sf-header.php file provides all the header functions, including top header, header, logo etc.</p>
+				<div class="function-reference">
+					<div class="heading">sf_top_bar()</div>
+					<div class="explanation">
+					This function outputs the top bar, which is configurable through the Theme Options > Header Options panel within the theme.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_header()</div>
+					<div class="explanation">
+					This function outputs the main header of the theme, which is configurable through the Theme Options > Header Options panel within the theme. The header output is determined by the chosen layout in the theme options. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_top_header()</div>
+					<div class="explanation">
+					This function outputs the top header of the theme, which is included with Header Configs 4 &amp; 7. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_logo()</div>
+					<div class="explanation">
+					This function outputs the logo, and the mobile menu buttons which are shown on Tablet Portrait down to Mobile Portrait window sizes. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_main_menu()</div>
+					<div class="explanation">
+					This function outputs the main menu for the theme. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_mobile_menu()</div>
+					<div class="explanation">
+					This function outputs the mobile menu for the theme, which is separate to the main menu shown on desktop browsers. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_woo_links()</div>
+					<div class="explanation">
+					This function outputs the WooCommerce links, which include a welcome message with username, and a super search link. 
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_cart()</div>
+					<div class="explanation">
+					This function outputs the cart dropdown in the header.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_wishlist()</div>
+					<div class="explanation">
+					This function outputs the wishlist dropdown in the header.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_ajaxsearch()</div>
+					<div class="explanation">
+					This function outputs the ajax header search results.
+					</div>
+				</div>
+			</div>
+			
+			<div id="footer">
+				<h2>Footer</h2>
+				<p>The footer for the theme consists of the Promo area, footer widgets, and copyright area.</p>
+				<div class="file-block">
+					<span>@filename:</span> footer.php<br/>
+					<span>@location:</span> root<br/>
+				</div>
+			</div>
+			
+			<div id="menus">
+				<h2>Menus</h2>
+				<p>There are 3 menu locations in Dante by default, the Main Navigation, Top Bar Menu, and Footer Menu.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-menus.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_setup_menus()</div>
+					<div class="explanation">
+					This function sets up the theme menu locations on init. By default there are 3 menu locations.
+					</div>
+				</div>
+			</div>
+			
+			<div id="pagination">
+				<h2>Pagination</h2>
+				<p>The pagination functions are used within archive and category layouts, and also within post type page builder assets.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-pagination.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">round_num()</div>
+					<div class="explanation">
+					This function rounds fractions down to the nearest value. It is used within the pagenavi() function.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">pagenavi()</div>
+					<div class="explanation">
+					This function rounds fractions down to the nearest value.
+					</div>
+				</div>
+			</div>
+			
+			<div id="comments">
+				<h2>Comments</h2>
+				<p>The comments functions configure the output code for each comment that is displayed within the theme.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-comments.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_custom_comments()</div>
+					<div class="explanation">
+					This function outputs code for each comment that is displayed.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">custom_pings()</div>
+					<div class="explanation">
+					This function outputs code for each ping that is displayed.
+					</div>
+				</div>
+			</div>
+			
+			<div id="sidebars">
+				<h2>Sidebars</h2>
+				<p>Dante ships with 8 sidebar widget areas, up to 4 footer sidebar areas, and a WooCommerce sidebar.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-sidebars.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_register_sidebars()</div>
+					<div class="explanation">
+					This function registers the sidebars for the theme after the theme is setup.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_sidebars_array()</div>
+					<div class="explanation">
+					This function returns an array of the registered sidebars, and is used within the theme options and meta boxes.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_set_sidebar_global()</div>
+					<div class="explanation">
+					This function sets a global variable for the current post sidebar setup, so that the content can be displayed based on the sidebar config.
+					</div>
+				</div>
+			</div>
+			
+			<div id="blog">
+				<h2>Blog</h2>
+				<p>Dante has various blog options that allow you to configure the display for the blog page builder asset, archive, category, and search results pages.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-blog.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_blog_items()</div>
+					<div class="explanation">
+					This function outputs blog items, based on a number of parameters such as blog type, category, and other options.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_blog_aux()</div>
+					<div class="explanation">
+					This function outputs the blog aux area above the blog items in the blog page builder asset.
+					</div>
+				</div>
+			</div>
+			
+			<div id="post-formats">
+				<h2>Post Formats</h2>
+				<p>Dante supports 10 post formats; Standard, Audio, Gallery, Image, Chat, Link, Quote, Aside, Status, Video.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-post-formats.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_post_media()</div>
+					<div class="explanation">
+					This function returns the media for the post based on the post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_post_format_image_src()</div>
+					<div class="explanation">
+					This function returns the featured image source for the Image post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_image_post()</div>
+					<div class="explanation">
+					This function returns the media for the Image post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_video_post()</div>
+					<div class="explanation">
+					This function returns the media for the Video post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_gallery_post()</div>
+					<div class="explanation">
+					This function returns the media for the Gallery post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_audio_post()</div>
+					<div class="explanation">
+					This function returns the media for the Audio post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_link_post()</div>
+					<div class="explanation">
+					This function returns the media for the Link post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_chat_post()</div>
+					<div class="explanation">
+					This function returns the media for the Chat post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_post_item()</div>
+					<div class="explanation">
+					This function outputs the full post item, including media, title, excerpt and details - based on the options and parameters passed to it.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_search_item()</div>
+					<div class="explanation">
+					This function outputs the search result item from the Post ID, shown on the search results page.
+					</div>
+				</div>
+			</div>
+			
+			<div id="portfolio">
+				<h2>Portfolio</h2>
+				<p>Dante has various portfolio options that allow you to configure the display for the portfolio page builder asset.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-portfolio.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_portfolio_items()</div>
+					<div class="explanation">
+					This function outputs portfolio items, based on a number of parameters such as blog type, category, and other options. This function is called from the Portfolio page builder asset, and the portfolio taxonomy archive page.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_portfolio_filter()</div>
+					<div class="explanation">
+					This function outputs the portfolio filter which is used to filter the portfolio on the fly, based on the categories used.
+					</div>
+				</div>
+			</div>
+			
+			<div id="products">
+				<h2>Products</h2>
+				<p>Dante adds to the standard WooCommerce product display functionality, through the provided page builder assets.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-products.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_mini_product_items()</div>
+					<div class="explanation">
+					This function outputs mini product item lists, which feature a small thumbnail on the left, and the details on the right.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_product_items()</div>
+					<div class="explanation">
+					This function outputs products in the same display format as on the shop and category pages, but with the added functionality of being able to create carousels, and also sort the products based on various queries.
+					</div>
+				</div>
+			</div>
+			
+			<div id="media">
+				<h2>Media</h2>
+				<div class="file-block">
+					<span>@filename:</span> sf-media.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_return_slider()</div>
+					<div class="explanation">
+					This function returns a rev slider object based on the shortcode. It is used within the page builder, as it's necessary to get a returned code for the slider, not echoed.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_video_embed()</div>
+					<div class="explanation">
+					This function is used to return YouTube/Vimeo embed code for video thumbnails.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_video_youtube()</div>
+					<div class="explanation">
+					This function returns the embed code for a YouTube video.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_video_vimeo()</div>
+					<div class="explanation">
+					This function returns the embed code for a Vimeo video.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_embed_src()</div>
+					<div class="explanation">
+					This function returns the video embed source for the fullscreen video overlay.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_featured_img_title()</div>
+					<div class="explanation">
+					This function returns the title attribute of the featured image for the current post.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_swift_slider()</div>
+					<div class="explanation">
+					This function outputs the swift slider, and contains the queries that returns the posts for the slides.
+					</div>
+				</div>
+			</div>
+			
+			<div id="formatting">
+				<h2>Formatting</h2>
+				<p>Dante includes various functions to get the content in it's required form.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-formatting.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_the_content_with_formatting()</div>
+					<div class="explanation">
+					This function returns the post content with formatting.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_add_formatting()</div>
+					<div class="explanation">
+					This function adds default content formatting to a provided string parameter, and returns it.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_new_excerpt_length()</div>
+					<div class="explanation">
+					This function modifies the default WordPress excerpt length.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_excerpt()</div>
+					<div class="explanation">
+					This function returns the excerpt, limited in length by the provided limit parameter.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_content()</div>
+					<div class="explanation">
+					This function returns the content, limited in length by the provided limit parameter.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_custom_excerpt()</div>
+					<div class="explanation">
+					This function returns the custom excerpt, limited in length by the provided limit parameter.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_tag_cloud_args()</div>
+					<div class="explanation">
+					This function modifies the standard tag cloud widget arguments, to make all tags the same size.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_category_widget_mod()</div>
+					<div class="explanation">
+					This function modifies the standard category widget arguments, formatting the content to fit in with the theme styling.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_archives_widget_mod()</div>
+					<div class="explanation">
+					This function modifies the standard archive widget arguments, formatting the content to fit in with the theme styling.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_format_chat_content()</div>
+					<div class="explanation">
+					This function adds formatting to posts that are using the chat post format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_format_chat_row_id()</div>
+					<div class="explanation">
+					This function adds a unique ID to each chat row.
+					</div>
+				</div>
+			</div>
+			
+			<div id="custom-styles">
+				<h2>Custom Styles</h2>
+				<p>Custom styling is defined through the Theme Options and Live Color Customiser. These saved options are then applied to the theme via dynamic CSS.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-custom-styles.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_custom_styles()</div>
+					<div class="explanation">
+					This function outputs the custom css needed for the page into the head tag of the document. It is loaded here for speed and performance reasons.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_custom_script()</div>
+					<div class="explanation">
+					This function outputs the user's Custom JS, added through the theme options panel, before the end of the page.
+					</div>
+				</div>
+			</div>
+			
+			<div id="customizer">
+				<h2>Customizer</h2>
+				<p>The live customizer that allows users to customise the theme on the fly, and then save their chosen options.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-customizer-options.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_customize_register()</div>
+					<div class="explanation">
+					This function registers the custom styles for the theme, the custom style options that are shown in the live customiser.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_customize_preview()</div>
+					<div class="explanation">
+					This function outputs some jQuery, which updates the live site elements with the new style options when they are changed. This is used to update the preview only, as a live example.
+					</div>
+				</div>
+			</div>
+			
+			<div id="theme-functions">
+				<h2>Theme Functions</h2>
+				<div class="file-block">
+					<span>@filename:</span> sf-theme-functions.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_theme_activation()</div>
+					<div class="explanation">
+					This function redirects the user to the theme options panel upon theme activation.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_bwm_filter()</div>
+					<div class="explanation">
+					This function filters the Font Awesome and SS Gizmo files to exclude them from the files that are minified within the Better WordPress Minify plugin. It filters extra files for IE.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_bwm_filter_script()</div>
+					<div class="explanation">
+					This function filters various scripts to exclude them from the files that are minified within the Better WordPress Minify plugin on IE.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_bwm_ie_disable()</div>
+					<div class="explanation">
+					This function disables Better WordPress Minify on IE browsers, as it often causes more issues than good.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_filter_wp_title()</div>
+					<div class="explanation">
+					This function filters the Font Awesome and SS Gizmo files to exclude them from the files that are minified within the Better WordPress Minify plugin.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_maintenance_mode()</div>
+					<div class="explanation">
+					This function enables a maintenance mode message to show for users who are not logged in, and not admins. This can be enabled/disabled in the theme options.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_custom_login_logo()</div>
+					<div class="explanation">
+					This function replaces the WordPress login logo, with a custom image, which can be replaced within the theme options.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_breadcrumbs()</div>
+					<div class="explanation">
+					This function returns a breadcrumbs output for a post/page. It checks that the Breadcrumb NavXT plugin is installed, and falls back to the Yoast Breadcrumb plugin.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_language_flags()</div>
+					<div class="explanation">
+					This function outputs language flag options, based on the languages enabled within the WPML plugin. This is used within the theme header.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_hex2rgb()</div>
+					<div class="explanation">
+					This function converts a hex colour value, into RGB format.				
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_comments_number()</div>
+					<div class="explanation">
+					This function returns a comment string detailing the number of comments, from a provided Post ID.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_category_list()</div>
+					<div class="explanation">
+					This function returns an array of categories for a taxonomy.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_category_list_key_array()</div>
+					<div class="explanation">
+					This function returns a array of categories for a taxonomy, in key field array format.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_get_woo_product_filters_array()</div>
+					<div class="explanation">
+					This function returns returns an array of product filters, including category and custom attributes.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_add_nofollow_cat()</div>
+					<div class="explanation">
+					This function filters out the rel tag that is included within WordPress category links.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_remove_head_links()</div>
+					<div class="explanation">
+					This function removes certain head tags from the document head, for security purposes.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_global_include_classes()</div>
+					<div class="explanation">
+					This function adds classes to an element in the theme's footer, which enables the theme's jQuery functions to load only when needed.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_countdown_shortcode_locale()</div>
+					<div class="explanation">
+					This function adds localised strings for the countdown shortcode.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_admin_bar_menu()</div>
+					<div class="explanation">
+					This function adds two links to the WordPress Admin Bar, Theme Options and Color Customizer.
+					</div>
+				</div>
+				<div class="function-reference">
+					<div class="heading">sf_admin_css()</div>
+					<div class="explanation">
+					This function adds css to the WordPress admin area for the custom post type icons.
+					</div>
+				</div>
+			</div>
+			
+			<div id="theme-options">
+				<h2>Theme Options</h2>
+				<p>The theme options for Dante are registered within this file. The options framework we use is Redux - <a href="http://reduxframework.com/docs/" target="_blank">click here to find out more</a>.</p>
+				<div class="file-block">
+					<span>@filename:</span> sf-options.php<br/>
+					<span>@location:</span> /includes<br/>
+				</div>
+			</div>
+			
+			<div id="page-builder-assets">
+				<h2>Page Builder Assets</h2>
+				<p>The page builder assets are shortcodes that are created through a class file. You can find the provided assets in /swift-framework/page-builder/builder/shortcodes/. If you would like to add/remove any assets from the page builder, you can do so by overriding the following function</p>
+				<div class="file-block">
+					<span>@filename:</span> spb-includes.php<br/>
+					<span>@location:</span> /swift-framework/page-builder/builder<br/>
+				</div>
+<code>if (!function_exists('spb_register_assets')) {
+	function spb_register_assets() {
+		require_once( SPB_SHORTCODES_DIR . 'default.php' );
+		require_once( SPB_SHORTCODES_DIR . 'column.php' );
+		require_once( SPB_SHORTCODES_DIR . 'accordion.php' );
+		require_once( SPB_SHORTCODES_DIR . 'tabs.php' );
+		require_once( SPB_SHORTCODES_DIR . 'tour.php' );
+		require_once( SPB_SHORTCODES_DIR . 'impact-text.php' );
+		require_once( SPB_SHORTCODES_DIR . 'media.php' );
+		require_once( SPB_SHORTCODES_DIR . 'raw_content.php' );
+		require_once( SPB_SHORTCODES_DIR . 'portfolio.php' );
+		require_once( SPB_SHORTCODES_DIR . 'blog.php' );
+		require_once( SPB_SHORTCODES_DIR . 'products.php' );
+		require_once( SPB_SHORTCODES_DIR . 'gallery.php' );	
+		require_once( SPB_SHORTCODES_DIR . 'clients.php' );
+		require_once( SPB_SHORTCODES_DIR . 'full-width-text.php' );
+		require_once( SPB_SHORTCODES_DIR . 'team.php' );
+		require_once( SPB_SHORTCODES_DIR . 'jobs.php' );
+		require_once( SPB_SHORTCODES_DIR . 'testimonial.php' );
+		require_once( SPB_SHORTCODES_DIR . 'testimonial-carousel.php' );
+		require_once( SPB_SHORTCODES_DIR . 'testimonial-slider.php' );
+		require_once( SPB_SHORTCODES_DIR . 'faqs.php' );
+		require_once( SPB_SHORTCODES_DIR . 'revslider.php' );
+		require_once( SPB_SHORTCODES_DIR . 'recent-posts.php' );
+		require_once( SPB_SHORTCODES_DIR . 'parallax.php' );
+		require_once( SPB_SHORTCODES_DIR . 'portfolio-showcase.php' );
+		require_once( SPB_SHORTCODES_DIR . 'portfolio-carousel.php' );
+		require_once( SPB_SHORTCODES_DIR . 'posts-carousel.php' );
+		require_once( SPB_SHORTCODES_DIR . 'team-carousel.php' );
+		require_once( SPB_SHORTCODES_DIR . 'jobs-overview.php' );
+		require_once( SPB_SHORTCODES_DIR . 'code-snippet.php' );
+		require_once( SPB_SHORTCODES_DIR . 'googlechart.php' );
+		require_once( SPB_SHORTCODES_DIR . 'sitemap.php' );
+		require_once( SPB_SHORTCODES_DIR . 'search.php' );
+		require_once( SPB_SHORTCODES_DIR . 'supersearch.php' );
+		require_once( SPB_SHORTCODES_DIR . 'latest-tweets.php' );	
+		require_once( SPB_SHORTCODES_DIR . 'tweets-slider.php' );	
+	}
+	if (is_admin()) {
+	add_action('admin_init', 'spb_register_assets', 2);
+	}
+	if (!is_admin()) {
+	add_action('wp', 'spb_register_assets', 2);
+	}
+}</code>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="links">
+				<a href="http://support.swiftideas.net" target="_blank">Get Support</a><a href="http://dante.swiftideas.net/documentation" target="_blank">User Documentation</a><a href="http://support.swiftideas.net/knowledgebase" target="_blank">Knowledgebase</a><a href="http://dante.swiftideas.net/changelog">View Changelog</a><a href="http://dante.swiftideas.net" target="_blank">View Theme Demo</a>
+			</div>
+			<p>&copy;2013 Swift Ideas Ltd</p>
+		</footer>
+		
+		<script src="js/jquery-1.9.1.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script>
+		  $(function() {
+		    $("#docs-contents").tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		    $("#tab-nav li").removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		    
+		    $('ul#tab-nav li').on('click', function() {
+		        window.location.hash = jQuery(this).find('a').attr('href');
+		    	//$('body,html').animate({scrollTop: 0}, 800, 'easeOutCubic');   
+		    });
+		  });
+		  </script>
+	</body>
+</html>
