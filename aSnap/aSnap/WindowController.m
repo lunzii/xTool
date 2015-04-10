@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 olunx. All rights reserved.
 //
 
+#import <CommonCrypto/CommonDigest.h>
+
 #import "WindowController.h"
 #import "TSTextField.h"
 
