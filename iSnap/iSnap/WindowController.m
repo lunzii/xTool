@@ -6,16 +6,12 @@
 //  Copyright (c) 2015年 olunx. All rights reserved.
 //
 
+#import <CommonCrypto/CommonDigest.h>
+
 #import "WindowController.h"
-#import "ImageMounter.h"
+#import "TSTextField.h"
 
 #import <MBProgressHUD.h>
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <time.h>
 
 #include <libimobiledevice/libimobiledevice.h>
 #include <libimobiledevice/lockdown.h>
@@ -99,15 +95,81 @@
 }
 
 - (IBAction)clickedRefresh:(id)sender {
-    if (self.checkDevice) {
-        [self takeScreenShot];
-    } else {
-        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
+    if(self.checkProduct){
+        if (self.checkDevice) {
+            [self takeScreenShot];
+        } else {
+            [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
+        }
     }
 }
 
 - (IBAction)clickedMore:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.napflux.com/"]];
+}
+
+- (BOOL) checkProduct {
+    BOOL result = NO;
+
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"productx"]){
+        if(_refreshCount < 2){
+            _refreshCount++;
+            return YES;
+        }else{
+            NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_alert_title", nil)
+                                             defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
+                                           alternateButton:NSLocalizedString(@"product_alert_btn_cancel", nil)
+                                               otherButton:nil
+                                 informativeTextWithFormat:NSLocalizedString(@"product_alert_msg", nil)];
+
+            TSTextField *email = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 30, 300, 24)];
+            email.placeholderString = NSLocalizedString(@"product_email", nil);
+            TSTextField *key = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
+            key.placeholderString = NSLocalizedString(@"product_key", nil);
+            NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
+            [view addSubview:email];
+            [view addSubview:key];
+            [alert setAccessoryView:view];
+            NSInteger button = [alert runModal];
+            if (button == NSAlertDefaultReturn) {
+                NSString *strEmail = [NSString stringWithFormat:@"%@+olunx%@", email.stringValue, @"2015"];
+                NSString *strKey = key.stringValue.uppercaseString;
+                NSString *productKey = [self md5String:strEmail];
+                NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
+
+                if([calKey isEqualToString:strKey]){
+                    result = YES;
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"productx"];
+                    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_success_title", nil)
+                                                     defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
+                                                   alternateButton:nil
+                                                       otherButton:nil
+                                         informativeTextWithFormat:NSLocalizedString(@"product_success_msg", nil)];
+                    alert.runModal;
+                }else{
+                    NSLog(@"Wrong product key.");
+                }
+            }
+        }
+    }else{
+        result = YES;
+    }
+
+    return result;
+}
+
+- (NSString *)md5String:(NSString *)value {
+    const char *cstr = [value UTF8String];
+    unsigned char result[16];
+    CC_MD5(cstr, strlen(cstr), result);
+
+    return [NSString stringWithFormat:
+            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+    ];
 }
 
 - (BOOL)checkDevice {

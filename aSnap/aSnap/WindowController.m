@@ -7,6 +7,7 @@
 //
 
 #import "WindowController.h"
+#import "TSTextField.h"
 
 #import <MBProgressHUD.h>
 
@@ -81,19 +82,21 @@
 }
 
 - (IBAction)clickedRefresh:(id)sender {
-    switch (self.checkDevice){
-        case DeviceFound:
-            [self takeScreenShot];
-            break;
-        case DeviceNotAuthorize:
-            [self showTextView:NSLocalizedString(@"device_status_not_authorize", nil)];
-            break;
-        case DeviceNotFound:
-            [self showTextView:NSLocalizedString(@"device_status_not_found", nil)];
-            break;
-        case DeviceError:
-            [self showTextView:NSLocalizedString(@"device_status_erro", nil)];
-            break;
+    if(self.checkProduct){
+        switch (self.checkDevice){
+            case DeviceFound:
+                [self takeScreenShot];
+                break;
+            case DeviceNotAuthorize:
+                [self showTextView:NSLocalizedString(@"device_status_not_authorize", nil)];
+                break;
+            case DeviceNotFound:
+                [self showTextView:NSLocalizedString(@"device_status_not_found", nil)];
+                break;
+            case DeviceError:
+                [self showTextView:NSLocalizedString(@"device_status_erro", nil)];
+                break;
+        }
     }
 }
 
@@ -101,15 +104,81 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.napflux.com/"]];
 }
 
+- (BOOL) checkProduct {
+    BOOL result = NO;
+
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"product"]){
+        if(_refreshCount < 2){
+            _refreshCount++;
+            return YES;
+        }else{
+            NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_alert_title", nil)
+                                             defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
+                                           alternateButton:NSLocalizedString(@"product_alert_btn_cancel", nil)
+                                               otherButton:nil
+                                 informativeTextWithFormat:NSLocalizedString(@"product_alert_msg", nil)];
+
+            TSTextField *email = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 30, 300, 24)];
+            email.placeholderString = NSLocalizedString(@"product_email", nil);
+            TSTextField *key = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
+            key.placeholderString = NSLocalizedString(@"product_key", nil);
+            NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
+            [view addSubview:email];
+            [view addSubview:key];
+            [alert setAccessoryView:view];
+            NSInteger button = [alert runModal];
+            if (button == NSAlertDefaultReturn) {
+                NSString *strEmail = [NSString stringWithFormat:@"%@+olunx%@", email.stringValue, @"2015"];
+                NSString *strKey = key.stringValue.uppercaseString;
+                NSString *productKey = [self md5String:strEmail];
+                NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
+                NSLog(@"strKey: %@", strKey);
+                NSLog(@"calKey: %@", calKey);
+
+                if([calKey isEqualToString:strKey]){
+                    result = YES;
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"product"];
+                    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_success_title", nil)
+                                                     defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
+                                                   alternateButton:nil
+                                                       otherButton:nil
+                                         informativeTextWithFormat:NSLocalizedString(@"product_success_msg", nil)];
+                    alert.runModal;
+                }else{
+                    NSLog(@"Wrong product key.");
+                }
+            }
+        }
+    }else{
+        result = YES;
+    }
+
+    return result;
+}
+
+- (NSString *)md5String:(NSString *)value {
+    const char *cstr = [value UTF8String];
+    unsigned char result[16];
+    CC_MD5(cstr, strlen(cstr), result);
+
+    return [NSString stringWithFormat:
+            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+    ];
+}
+
 - (NSInteger)checkDevice {
     NSInteger result = DeviceNotFound;
     NSString *devices = [self runCMD:@[@"devices", @"-l"]];
-    NSLog(@"%@", devices);
+//    NSLog(@"%@", devices);
     NSArray *array = [devices componentsSeparatedByString:@"\n"];
     if([array count] > 2){
         for(int i=1;i< [array count];i++){
             NSString *device = [array objectAtIndex:i];
-            NSLog(@"device: %@", device);
+//            NSLog(@"device: %@", device);
             if([device rangeOfString:@"unauthorized"].location != NSNotFound){
                 result = DeviceNotAuthorize;
                 break;
@@ -152,11 +221,11 @@
     hud.labelText = NSLocalizedString(@"screenshot_refreshing", nil);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSString *string = [self runCMD:@[@"shell", @"screencap", @"/sdcard/.asnap.png"]];
-        NSLog(string);
+//        NSLog(string);
         NSString *storeFile = [[weakSelf getPicturePath] stringByAppendingPathComponent:@".asnap.png"];
-        NSLog(storeFile);
+//        NSLog(storeFile);
         string = [self runCMD:@[@"pull",  @"/sdcard/.asnap.png", storeFile]];
-        NSLog(string);
+//        NSLog(string);
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hide:YES];
             if([[NSFileManager defaultManager] fileExistsAtPath:storeFile]){

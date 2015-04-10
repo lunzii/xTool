@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C82F34BC1AD7D29100E130C3 /* TSTextField.m */; };
 		C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C853D58D1A90FBE90046A6F2 /* WindowController.m */; };
 		C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E4938B1A937A8C00EF062D /* Localizable.strings */; };
 		C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C82F34BB1AD7D29100E130C3 /* TSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextField.h; sourceTree = "<group>"; };
+		C82F34BC1AD7D29100E130C3 /* TSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextField.m; sourceTree = "<group>"; };
 		C853D58C1A90FBE90046A6F2 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C853D58D1A90FBE90046A6F2 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		C8E493841A9379B200EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		C8FAFAC51A8F029400FDD7CB /* aSnap */ = {
 			isa = PBXGroup;
 			children = (
+				C82F34BB1AD7D29100E130C3 /* TSTextField.h */,
+				C82F34BC1AD7D29100E130C3 /* TSTextField.m */,
 				C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */,
 				C853D58C1A90FBE90046A6F2 /* WindowController.h */,
 				C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */,
@@ -253,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */,
 				C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */,
 				C8FAFACC1A8F029400FDD7CB /* main.m in Sources */,
 				C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */,

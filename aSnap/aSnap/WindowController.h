@@ -21,6 +21,8 @@
 - (IBAction)clickedSave:(id)sender;
 - (IBAction)clickedMore:(id)sender;
 
+@property (nonatomic) int refreshCount;
+
 typedef NS_ENUM(NSInteger, DeviceStatus){
     DeviceFound = 0,
     DeviceFoundMutiple = 1,

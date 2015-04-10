@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet NSTextView *textView;
 @property (strong, nonatomic) IBOutlet NSImageView *imageView;
 
+@property (nonatomic) int refreshCount;
+
 - (IBAction)clickedRefresh:(id)sender;
 - (IBAction)clickedSnap:(id)sender;
 - (IBAction)clickedSave:(id)sender;
