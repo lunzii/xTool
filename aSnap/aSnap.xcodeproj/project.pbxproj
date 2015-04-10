@@ -13,21 +13,12 @@
 		C8FAFACC1A8F029400FDD7CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFACB1A8F029400FDD7CB /* main.m */; };
 		C8FAFAD11A8F029400FDD7CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8FAFAD01A8F029400FDD7CB /* Images.xcassets */; };
 		C8FAFAD41A8F029400FDD7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8FAFAD21A8F029400FDD7CB /* Main.storyboard */; };
-		C8FAFAE01A8F029400FDD7CB /* aSnapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFADF1A8F029400FDD7CB /* aSnapTests.m */; };
-		C8FC06D71A92349D00720C6F /* aSnap.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C8FAFAE91A8F02A500FDD7CB /* aSnap.entitlements */; };
 		C8FC06D81A9234A200720C6F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FAFADE1A8F029400FDD7CB /* Info.plist */; };
 		C8FC070C1A9245F900720C6F /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FC07091A9245E900720C6F /* libMBProgressHUD.a */; };
 		C8FC07151A92481300720C6F /* adb in Resources */ = {isa = PBXBuildFile; fileRef = C8FC07141A92481300720C6F /* adb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C8FAFADA1A8F029400FDD7CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C8FAFABB1A8F029400FDD7CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8FAFAC21A8F029400FDD7CB;
-			remoteInfo = aSnap;
-		};
 		C8FC07081A9245E900720C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */;
@@ -50,17 +41,15 @@
 		C8E493841A9379B200EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		C8E4938C1A937A8C00EF062D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8E4938E1A937A9400EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		C8FAFAC31A8F029400FDD7CB /* aSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8FAFAC31A8F029400FDD7CB /* aSnapx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aSnapx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FAFAC71A8F029400FDD7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C8FAFACB1A8F029400FDD7CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8FAFAD01A8F029400FDD7CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8FAFAD31A8F029400FDD7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8FAFAD91A8F029400FDD7CB /* aSnapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aSnapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FAFADE1A8F029400FDD7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8FAFADF1A8F029400FDD7CB /* aSnapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aSnapTests.m; sourceTree = "<group>"; };
-		C8FAFAE91A8F02A500FDD7CB /* aSnap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = aSnap.entitlements; sourceTree = "<group>"; };
 		C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = "../../MBProgressHUD-OSX/MBProgressHUD.xcodeproj"; sourceTree = "<group>"; };
 		C8FC07141A92481300720C6F /* adb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = adb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8FC070C1A9245F900720C6F /* libMBProgressHUD.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C8FAFAD61A8F029400FDD7CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +79,7 @@
 		C8FAFAC41A8F029400FDD7CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8FAFAC31A8F029400FDD7CB /* aSnap.app */,
-				C8FAFAD91A8F029400FDD7CB /* aSnapTests.xctest */,
+				C8FAFAC31A8F029400FDD7CB /* aSnapx.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,15 +87,14 @@
 		C8FAFAC51A8F029400FDD7CB /* aSnap */ = {
 			isa = PBXGroup;
 			children = (
-				C8E4938B1A937A8C00EF062D /* Localizable.strings */,
-				C8FC07131A92479100720C6F /* Resources */,
-				C8FAFAE91A8F02A500FDD7CB /* aSnap.entitlements */,
 				C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */,
 				C853D58C1A90FBE90046A6F2 /* WindowController.h */,
 				C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */,
 				C853D58D1A90FBE90046A6F2 /* WindowController.m */,
 				C8FAFAD01A8F029400FDD7CB /* Images.xcassets */,
+				C8E4938B1A937A8C00EF062D /* Localizable.strings */,
 				C8FAFAD21A8F029400FDD7CB /* Main.storyboard */,
+				C8FC07131A92479100720C6F /* Resources */,
 				C8FAFAC61A8F029400FDD7CB /* Supporting Files */,
 			);
 			path = aSnap;
@@ -188,26 +168,8 @@
 			);
 			name = aSnap;
 			productName = aSnap;
-			productReference = C8FAFAC31A8F029400FDD7CB /* aSnap.app */;
+			productReference = C8FAFAC31A8F029400FDD7CB /* aSnapx.app */;
 			productType = "com.apple.product-type.application";
-		};
-		C8FAFAD81A8F029400FDD7CB /* aSnapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C8FAFAE61A8F029400FDD7CB /* Build configuration list for PBXNativeTarget "aSnapTests" */;
-			buildPhases = (
-				C8FAFAD51A8F029400FDD7CB /* Sources */,
-				C8FAFAD61A8F029400FDD7CB /* Frameworks */,
-				C8FAFAD71A8F029400FDD7CB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C8FAFADB1A8F029400FDD7CB /* PBXTargetDependency */,
-			);
-			name = aSnapTests;
-			productName = aSnapTests;
-			productReference = C8FAFAD91A8F029400FDD7CB /* aSnapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -220,15 +182,12 @@
 				TargetAttributes = {
 					C8FAFAC21A8F029400FDD7CB = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = N4BBCE23Y9;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
-					};
-					C8FAFAD81A8F029400FDD7CB = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = C8FAFAC21A8F029400FDD7CB;
 					};
 				};
 			};
@@ -253,7 +212,6 @@
 			projectRoot = "";
 			targets = (
 				C8FAFAC21A8F029400FDD7CB /* aSnap */,
-				C8FAFAD81A8F029400FDD7CB /* aSnapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,16 +241,8 @@
 				C8FC07151A92481300720C6F /* adb in Resources */,
 				C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */,
 				C8FC06D81A9234A200720C6F /* Info.plist in Resources */,
-				C8FC06D71A92349D00720C6F /* aSnap.entitlements in Resources */,
 				C8FAFAD11A8F029400FDD7CB /* Images.xcassets in Resources */,
 				C8FAFAD41A8F029400FDD7CB /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C8FAFAD71A8F029400FDD7CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,23 +259,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8FAFAD51A8F029400FDD7CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C8FAFAE01A8F029400FDD7CB /* aSnapTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C8FAFADB1A8F029400FDD7CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C8FAFAC21A8F029400FDD7CB /* aSnap */;
-			targetProxy = C8FAFADA1A8F029400FDD7CB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C8E4938B1A937A8C00EF062D /* Localizable.strings */ = {
@@ -383,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -419,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -430,7 +364,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = aSnap/aSnap.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -441,7 +374,7 @@
 				);
 				INFOPLIST_FILE = aSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-O2",
 					"-g",
@@ -452,7 +385,7 @@
 					"-D_GNU_SOURCE",
 					"-DHAVE_FORKEXEC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = aSnapx;
 			};
 			name = Debug;
 		};
@@ -461,7 +394,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = aSnap/aSnap.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -472,7 +404,7 @@
 				);
 				INFOPLIST_FILE = aSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-O2",
 					"-g",
@@ -483,43 +415,7 @@
 					"-D_GNU_SOURCE",
 					"-DHAVE_FORKEXEC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C8FAFAE71A8F029400FDD7CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = aSnapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aSnap.app/Contents/MacOS/aSnap";
-			};
-			name = Debug;
-		};
-		C8FAFAE81A8F029400FDD7CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = aSnapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aSnap.app/Contents/MacOS/aSnap";
+				PRODUCT_NAME = aSnapx;
 			};
 			name = Release;
 		};
@@ -540,15 +436,6 @@
 			buildConfigurations = (
 				C8FAFAE41A8F029400FDD7CB /* Debug */,
 				C8FAFAE51A8F029400FDD7CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C8FAFAE61A8F029400FDD7CB /* Build configuration list for PBXNativeTarget "aSnapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C8FAFAE71A8F029400FDD7CB /* Debug */,
-				C8FAFAE81A8F029400FDD7CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
