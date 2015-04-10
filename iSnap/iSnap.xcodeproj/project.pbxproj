@@ -17,7 +17,6 @@
 		C8E493B51A93946100EF062D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E493B41A93946100EF062D /* main.m */; };
 		C8E493BA1A93946100EF062D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E493B91A93946100EF062D /* Images.xcassets */; };
 		C8E493BD1A93946100EF062D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E493BB1A93946100EF062D /* Main.storyboard */; };
-		C8E493C91A93946200EF062D /* iSnapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E493C81A93946200EF062D /* iSnapTests.m */; };
 		C8E493D41A9394EA00EF062D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E493D21A9394EA00EF062D /* Localizable.strings */; };
 		C8E494091A93956C00EF062D /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E493F41A93953E00EF062D /* libimobiledevice.a */; };
 		C8E4940A1A93956C00EF062D /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E493DD1A93951300EF062D /* libMBProgressHUD.a */; };
@@ -30,13 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C8549C2C1AD7A59200F65927 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C8E493A41A93946100EF062D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8E493AB1A93946100EF062D;
-			remoteInfo = iSnap;
-		};
 		C8E493DC1A93951300EF062D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8E493D71A93951300EF062D /* MBProgressHUD.xcodeproj */;
@@ -137,7 +129,6 @@
 		C8E493B41A93946100EF062D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8E493B91A93946100EF062D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8E493BC1A93946100EF062D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8E493C21A93946200EF062D /* iSnapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSnapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E493C71A93946200EF062D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E493C81A93946200EF062D /* iSnapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSnapTests.m; sourceTree = "<group>"; };
 		C8E493D31A9394EA00EF062D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -168,13 +159,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E493BF1A93946200EF062D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -191,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				C8E493AC1A93946100EF062D /* iSnapx.app */,
-				C8E493C21A93946200EF062D /* iSnapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,24 +295,6 @@
 			productReference = C8E493AC1A93946100EF062D /* iSnapx.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C8E493C11A93946200EF062D /* iSnapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C8E493CF1A93946200EF062D /* Build configuration list for PBXNativeTarget "iSnapTests" */;
-			buildPhases = (
-				C8E493BE1A93946200EF062D /* Sources */,
-				C8E493BF1A93946200EF062D /* Frameworks */,
-				C8E493C01A93946200EF062D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C8549C2D1AD7A59200F65927 /* PBXTargetDependency */,
-			);
-			name = iSnapTests;
-			productName = iSnapTests;
-			productReference = C8E493C21A93946200EF062D /* iSnapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -342,10 +307,6 @@
 					C8E493AB1A93946100EF062D = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = N4BBCE23Y9;
-					};
-					C8E493C11A93946200EF062D = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = C8E493AB1A93946100EF062D;
 					};
 				};
 			};
@@ -374,7 +335,6 @@
 			projectRoot = "";
 			targets = (
 				C8E493AB1A93946100EF062D /* iSnap */,
-				C8E493C11A93946200EF062D /* iSnapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -484,13 +444,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E493C01A93946200EF062D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -504,23 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E493BE1A93946200EF062D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C8E493C91A93946200EF062D /* iSnapTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C8549C2D1AD7A59200F65927 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C8E493AB1A93946100EF062D /* iSnap */;
-			targetProxy = C8549C2C1AD7A59200F65927 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C8E493BB1A93946100EF062D /* Main.storyboard */ = {
@@ -682,42 +619,6 @@
 			};
 			name = Release;
 		};
-		C8E493D01A93946200EF062D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iSnapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSnap.app/Contents/MacOS/iSnap";
-			};
-			name = Debug;
-		};
-		C8E493D11A93946200EF062D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iSnapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSnap.app/Contents/MacOS/iSnap";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -735,15 +636,6 @@
 			buildConfigurations = (
 				C8E493CD1A93946200EF062D /* Debug */,
 				C8E493CE1A93946200EF062D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C8E493CF1A93946200EF062D /* Build configuration list for PBXNativeTarget "iSnapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C8E493D01A93946200EF062D /* Debug */,
-				C8E493D11A93946200EF062D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
