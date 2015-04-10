@@ -132,8 +132,8 @@
                 NSString *strKey = key.stringValue.uppercaseString;
                 NSString *productKey = [self md5String:strEmail];
                 NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
-                NSLog(@"strKey: %@", strKey);
-                NSLog(@"calKey: %@", calKey);
+//                NSLog(@"strKey: %@", strKey);
+//                NSLog(@"calKey: %@", calKey);
 
                 if([calKey isEqualToString:strKey]){
                     result = YES;

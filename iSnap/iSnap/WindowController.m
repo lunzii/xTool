@@ -111,7 +111,7 @@
 - (BOOL) checkProduct {
     BOOL result = NO;
 
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"productx"]){
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"product"]){
         if(_refreshCount < 2){
             _refreshCount++;
             return YES;
@@ -136,10 +136,12 @@
                 NSString *strKey = key.stringValue.uppercaseString;
                 NSString *productKey = [self md5String:strEmail];
                 NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
+//                NSLog(@"strKey: %@", strKey);
+//                NSLog(@"calKey: %@", calKey);
 
                 if([calKey isEqualToString:strKey]){
                     result = YES;
-                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"productx"];
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"product"];
                     NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_success_title", nil)
                                                      defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
                                                    alternateButton:nil
