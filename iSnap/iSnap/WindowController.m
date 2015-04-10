@@ -107,7 +107,7 @@
 }
 
 - (IBAction)clickedMore:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://lunzii.com"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.napflux.com/"]];
 }
 
 - (BOOL)checkDevice {

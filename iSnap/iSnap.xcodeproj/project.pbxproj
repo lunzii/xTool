@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8549BFA1AD772DA00F65927 /* 7.0 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF41AD772DA00F65927 /* 7.0 */; };
+		C8549BFB1AD772DA00F65927 /* 7.1 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF51AD772DA00F65927 /* 7.1 */; };
+		C8549BFC1AD772DA00F65927 /* 8.0 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF61AD772DA00F65927 /* 8.0 */; };
+		C8549BFD1AD772DA00F65927 /* 8.1 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF71AD772DA00F65927 /* 8.1 */; };
+		C8549BFE1AD772DA00F65927 /* 8.2 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF81AD772DA00F65927 /* 8.2 */; };
+		C8549BFF1AD772DA00F65927 /* 8.3 in Resources */ = {isa = PBXBuildFile; fileRef = C8549BF91AD772DA00F65927 /* 8.3 */; };
 		C8E493B31A93946100EF062D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E493B21A93946100EF062D /* AppDelegate.m */; };
 		C8E493B51A93946100EF062D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E493B41A93946100EF062D /* main.m */; };
 		C8E493BA1A93946100EF062D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E493B91A93946100EF062D /* Images.xcassets */; };
@@ -19,14 +25,6 @@
 		C8E4940F1A93956C00EF062D /* libusb-1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E4940C1A93956C00EF062D /* libusb-1.0.0.a */; };
 		C8E494101A93956C00EF062D /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E4940D1A93956C00EF062D /* libusbmuxd.a */; };
 		C8E494151A93962800EF062D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E494141A93962800EF062D /* WindowController.m */; };
-		C8E494231A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8E494171A9396A600EF062D /* DeveloperDiskImage.dmg */; };
-		C8E494241A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8E494181A9396A600EF062D /* DeveloperDiskImage.dmg.signature */; };
-		C8E494251A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8E4941A1A9396A600EF062D /* DeveloperDiskImage.dmg */; };
-		C8E494261A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8E4941B1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */; };
-		C8E494271A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8E4941D1A9396A600EF062D /* DeveloperDiskImage.dmg */; };
-		C8E494281A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8E4941E1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */; };
-		C8E494291A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */ = {isa = PBXBuildFile; fileRef = C8E494201A9396A600EF062D /* DeveloperDiskImage.dmg */; };
-		C8E4942A1A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */ = {isa = PBXBuildFile; fileRef = C8E494211A9396A600EF062D /* DeveloperDiskImage.dmg.signature */; };
 		C8E4942B1A9396A600EF062D /* mounter in Resources */ = {isa = PBXBuildFile; fileRef = C8E494221A9396A600EF062D /* mounter */; };
 		C8E4942D1A9396EC00EF062D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E4942C1A9396EC00EF062D /* libxml2.dylib */; };
 /* End PBXBuildFile section */
@@ -126,7 +124,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8E493AC1A93946100EF062D /* iSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8549BF41AD772DA00F65927 /* 7.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.0; sourceTree = "<group>"; };
+		C8549BF51AD772DA00F65927 /* 7.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 7.1; sourceTree = "<group>"; };
+		C8549BF61AD772DA00F65927 /* 8.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.0; sourceTree = "<group>"; };
+		C8549BF71AD772DA00F65927 /* 8.1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.1; sourceTree = "<group>"; };
+		C8549BF81AD772DA00F65927 /* 8.2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.2; sourceTree = "<group>"; };
+		C8549BF91AD772DA00F65927 /* 8.3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 8.3; sourceTree = "<group>"; };
+		C8E493AC1A93946100EF062D /* iSnapx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSnapx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E493B01A93946100EF062D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E493B11A93946100EF062D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8E493B21A93946100EF062D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,14 +150,6 @@
 		C8E4940D1A93956C00EF062D /* libusbmuxd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libusbmuxd.a; path = ../../../libusbmuxd/Xcode/build/Debug/libusbmuxd.a; sourceTree = "<group>"; };
 		C8E494131A93962800EF062D /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C8E494141A93962800EF062D /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
-		C8E494171A9396A600EF062D /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
-		C8E494181A9396A600EF062D /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
-		C8E4941A1A9396A600EF062D /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
-		C8E4941B1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
-		C8E4941D1A9396A600EF062D /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
-		C8E4941E1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
-		C8E494201A9396A600EF062D /* DeveloperDiskImage.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg; sourceTree = "<group>"; };
-		C8E494211A9396A600EF062D /* DeveloperDiskImage.dmg.signature */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeveloperDiskImage.dmg.signature; sourceTree = "<group>"; };
 		C8E494221A9396A600EF062D /* mounter */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mounter; sourceTree = "<group>"; };
 		C8E4942C1A9396EC00EF062D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -194,7 +190,7 @@
 		C8E493AD1A93946100EF062D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8E493AC1A93946100EF062D /* iSnap.app */,
+				C8E493AC1A93946100EF062D /* iSnapx.app */,
 				C8E493C21A93946200EF062D /* iSnapTests.xctest */,
 			);
 			name = Products;
@@ -246,10 +242,12 @@
 		C8E493D51A9394FA00EF062D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C8E494161A9396A600EF062D /* 7.0 */,
-				C8E494191A9396A600EF062D /* 7.1 */,
-				C8E4941C1A9396A600EF062D /* 8.0 */,
-				C8E4941F1A9396A600EF062D /* 8.1 */,
+				C8549BF41AD772DA00F65927 /* 7.0 */,
+				C8549BF51AD772DA00F65927 /* 7.1 */,
+				C8549BF61AD772DA00F65927 /* 8.0 */,
+				C8549BF71AD772DA00F65927 /* 8.1 */,
+				C8549BF81AD772DA00F65927 /* 8.2 */,
+				C8549BF91AD772DA00F65927 /* 8.3 */,
 				C8E494221A9396A600EF062D /* mounter */,
 			);
 			name = Resources;
@@ -294,42 +292,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C8E494161A9396A600EF062D /* 7.0 */ = {
-			isa = PBXGroup;
-			children = (
-				C8E494171A9396A600EF062D /* DeveloperDiskImage.dmg */,
-				C8E494181A9396A600EF062D /* DeveloperDiskImage.dmg.signature */,
-			);
-			path = 7.0;
-			sourceTree = "<group>";
-		};
-		C8E494191A9396A600EF062D /* 7.1 */ = {
-			isa = PBXGroup;
-			children = (
-				C8E4941A1A9396A600EF062D /* DeveloperDiskImage.dmg */,
-				C8E4941B1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */,
-			);
-			path = 7.1;
-			sourceTree = "<group>";
-		};
-		C8E4941C1A9396A600EF062D /* 8.0 */ = {
-			isa = PBXGroup;
-			children = (
-				C8E4941D1A9396A600EF062D /* DeveloperDiskImage.dmg */,
-				C8E4941E1A9396A600EF062D /* DeveloperDiskImage.dmg.signature */,
-			);
-			path = 8.0;
-			sourceTree = "<group>";
-		};
-		C8E4941F1A9396A600EF062D /* 8.1 */ = {
-			isa = PBXGroup;
-			children = (
-				C8E494201A9396A600EF062D /* DeveloperDiskImage.dmg */,
-				C8E494211A9396A600EF062D /* DeveloperDiskImage.dmg.signature */,
-			);
-			path = 8.1;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,7 +309,7 @@
 			);
 			name = iSnap;
 			productName = iSnap;
-			productReference = C8E493AC1A93946100EF062D /* iSnap.app */;
+			productReference = C8E493AC1A93946100EF062D /* iSnapx.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C8E493C11A93946200EF062D /* iSnapTests */ = {
@@ -379,6 +341,7 @@
 				TargetAttributes = {
 					C8E493AB1A93946100EF062D = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = N4BBCE23Y9;
 					};
 					C8E493C11A93946200EF062D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -508,17 +471,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E494271A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */,
-				C8E494261A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */,
-				C8E494281A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */,
-				C8E494231A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */,
+				C8549BFE1AD772DA00F65927 /* 8.2 in Resources */,
 				C8E493BA1A93946100EF062D /* Images.xcassets in Resources */,
+				C8549BFA1AD772DA00F65927 /* 7.0 in Resources */,
+				C8549BFD1AD772DA00F65927 /* 8.1 in Resources */,
+				C8549BFF1AD772DA00F65927 /* 8.3 in Resources */,
 				C8E493D41A9394EA00EF062D /* Localizable.strings in Resources */,
-				C8E494241A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */,
-				C8E4942A1A9396A600EF062D /* DeveloperDiskImage.dmg.signature in Resources */,
-				C8E494251A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */,
+				C8549BFB1AD772DA00F65927 /* 7.1 in Resources */,
+				C8549BFC1AD772DA00F65927 /* 8.0 in Resources */,
 				C8E4942B1A9396A600EF062D /* mounter in Resources */,
-				C8E494291A9396A600EF062D /* DeveloperDiskImage.dmg in Resources */,
 				C8E493BD1A93946100EF062D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -653,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -664,7 +625,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,7 +645,9 @@
 					/Users/olunx/Documents/workspace/libusb/Xcode/build/Debug,
 					/Users/olunx/Documents/workspace/libusbmuxd/Xcode/build/Debug,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = iSnapx;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -692,7 +656,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,7 +676,9 @@
 					/Users/olunx/Documents/workspace/libusb/Xcode/build/Debug,
 					/Users/olunx/Documents/workspace/libusbmuxd/Xcode/build/Debug,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = iSnapx;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
