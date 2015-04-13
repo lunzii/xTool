@@ -10,6 +10,7 @@
 
 #import "WindowController.h"
 #import "TSTextField.h"
+#import "NSAttributedAlert.h"
 
 #import <MBProgressHUD.h>
 
@@ -37,19 +38,16 @@
 - (void)showTextView:(NSString *)text {
     if (self.textView == nil) {
         [self removeImageView];
-        self.textView = [[NSTextView alloc] init];
-        self.textView.frame = CGRectZero;
-        self.textView.alignment = NSCenterTextAlignment;
+        self.textView = [[NSLabel alloc] init];
+        self.textView.textAlignment = NSCenterTextAlignment;
         self.textView.translatesAutoresizingMaskIntoConstraints = NO;
         self.textView.backgroundColor = [NSColor clearColor];
         self.textView.textColor = [NSColor blackColor];
         self.textView.font = [NSFont systemFontOfSize:14.0f];
-
         [self.contentView addSubview:self.textView];
         [self setCenterConstraints:self.textView toSuperView:self.contentView];
     }
-    [self.textView.textStorage.mutableString setString:@""];
-    [self.textView insertText:text];
+    self.textView.text = text;
 }
 
 - (void)removeTextView {
@@ -111,17 +109,16 @@
 - (BOOL) checkProduct {
     BOOL result = NO;
 
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"product"]){
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"producta"]){
         if(_refreshCount < 2){
             _refreshCount++;
             return YES;
         }else{
-            NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_alert_title", nil)
-                                             defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
-                                           alternateButton:NSLocalizedString(@"product_alert_btn_cancel", nil)
-                                               otherButton:nil
-                                 informativeTextWithFormat:NSLocalizedString(@"product_alert_msg", nil)];
-
+            NSAttributedAlert *alert = [[NSAttributedAlert alloc] init];
+            [alert addButtonWithTitle:NSLocalizedString(@"product_alert_btn_sure", nil)];
+            [alert addButtonWithTitle:NSLocalizedString(@"product_alert_btn_cancel", nil)];
+            [alert setMessageText:NSLocalizedString(@"product_alert_title", nil)];
+            [alert setInformativeText:NSLocalizedString(@"product_alert_msg", nil) containsHtml:YES];
             TSTextField *email = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 30, 300, 24)];
             email.placeholderString = NSLocalizedString(@"product_email", nil);
             TSTextField *key = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
@@ -131,7 +128,8 @@
             [view addSubview:key];
             [alert setAccessoryView:view];
             NSInteger button = [alert runModal];
-            if (button == NSAlertDefaultReturn) {
+            NSLog(@"alert: %ld", (long)button);
+            if (button == 1000) {
                 NSString *strEmail = [NSString stringWithFormat:@"%@+olunx%@", email.stringValue, @"2015"];
                 NSString *strKey = key.stringValue.uppercaseString;
                 NSString *productKey = [self md5String:strEmail];
@@ -149,7 +147,12 @@
                                          informativeTextWithFormat:NSLocalizedString(@"product_success_msg", nil)];
                     alert.runModal;
                 }else{
-                    NSLog(@"Wrong product key.");
+                    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_failed_title", nil)
+                                                     defaultButton:NSLocalizedString(@"product_alert_btn_sure", nil)
+                                                   alternateButton:nil
+                                                       otherButton:nil
+                                         informativeTextWithFormat:NSLocalizedString(@"product_failed_msg", nil)];
+                    alert.runModal;
                 }
             }
         }

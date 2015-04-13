@@ -7,13 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSLabel.h"
 
 @interface WindowController : NSWindowController
 
 @property (weak) IBOutlet NSToolbarItem *iconRefresh;
 
 @property (strong, nonatomic) IBOutlet NSView *contentView;
-@property (strong, nonatomic) IBOutlet NSTextView *textView;
+@property (strong, nonatomic) IBOutlet NSLabel *textView;
 @property (strong, nonatomic) IBOutlet NSImageView *imageView;
 
 @property (nonatomic) int refreshCount;

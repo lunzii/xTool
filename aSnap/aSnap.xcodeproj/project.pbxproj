@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C82F34BC1AD7D29100E130C3 /* TSTextField.m */; };
+		C83547781ADB9D6200BE0F00 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C83547771ADB9D6200BE0F00 /* NSLabel.m */; };
+		C83547931ADBB52A00BE0F00 /* NSAttributedAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = C83547921ADBB52A00BE0F00 /* NSAttributedAlert.m */; };
 		C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C853D58D1A90FBE90046A6F2 /* WindowController.m */; };
 		C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E4938B1A937A8C00EF062D /* Localizable.strings */; };
 		C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		C82F34BB1AD7D29100E130C3 /* TSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTextField.h; sourceTree = "<group>"; };
 		C82F34BC1AD7D29100E130C3 /* TSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTextField.m; sourceTree = "<group>"; };
+		C83547761ADB9D6200BE0F00 /* NSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLabel.h; sourceTree = "<group>"; };
+		C83547771ADB9D6200BE0F00 /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
+		C83547911ADBB52A00BE0F00 /* NSAttributedAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedAlert.h; sourceTree = "<group>"; };
+		C83547921ADBB52A00BE0F00 /* NSAttributedAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedAlert.m; sourceTree = "<group>"; };
 		C853D58C1A90FBE90046A6F2 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C853D58D1A90FBE90046A6F2 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		C8E493841A9379B200EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 		C8FAFAC51A8F029400FDD7CB /* aSnap */ = {
 			isa = PBXGroup;
 			children = (
+				C83547911ADBB52A00BE0F00 /* NSAttributedAlert.h */,
+				C83547921ADBB52A00BE0F00 /* NSAttributedAlert.m */,
+				C83547761ADB9D6200BE0F00 /* NSLabel.h */,
+				C83547771ADB9D6200BE0F00 /* NSLabel.m */,
 				C82F34BB1AD7D29100E130C3 /* TSTextField.h */,
 				C82F34BC1AD7D29100E130C3 /* TSTextField.m */,
 				C8FAFAC81A8F029400FDD7CB /* AppDelegate.h */,
@@ -261,7 +271,9 @@
 				C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */,
 				C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */,
 				C8FAFACC1A8F029400FDD7CB /* main.m in Sources */,
+				C83547781ADB9D6200BE0F00 /* NSLabel.m in Sources */,
 				C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */,
+				C83547931ADBB52A00BE0F00 /* NSAttributedAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

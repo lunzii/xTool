@@ -20,11 +20,13 @@ screenshot_snap_success = "复制成功";
 screenshot_snap_fail = "复制失败";
 
 
-product_alert_title = "请输入你的序列号";
+product_alert_title = "请输入你的注册码！";
 product_alert_msg = "购买: http://www.napflux.com/buy-asnapx/";
 product_alert_btn_sure = "确定";
 product_alert_btn_cancel = "取消";
 product_success_title = "恭喜";
 product_success_msg = "非常感谢你的支持！";
+product_failed_title = "提示";
+product_failed_msg = "你的注册码不正确！";
 product_email = "电子邮箱";
-product_key = "序列号";
+product_key = "注册码";
