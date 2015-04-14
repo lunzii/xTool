@@ -254,10 +254,10 @@
 		C8E493D61A93950100EF062D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8E4942C1A9396EC00EF062D /* libxml2.dylib */,
 				C8E4940B1A93956C00EF062D /* libplist.a */,
 				C8E4940C1A93956C00EF062D /* libusb-1.0.0.a */,
 				C8E4940D1A93956C00EF062D /* libusbmuxd.a */,
+				C8E4942C1A9396EC00EF062D /* libxml2.dylib */,
 				C8E493E21A93953E00EF062D /* libimobiledevice.xcodeproj */,
 				C8E493D71A93951300EF062D /* MBProgressHUD.xcodeproj */,
 			);
@@ -583,6 +583,10 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iSnap",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -614,6 +618,10 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iSnap",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

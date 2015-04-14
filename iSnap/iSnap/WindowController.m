@@ -131,11 +131,15 @@
             NSLog(@"alert: %ld", (long)button);
             if (button == 1000) {
                 NSString *strEmail = [NSString stringWithFormat:@"%@+olunx%@", email.stringValue, @"2015"];
-                NSString *strKey = key.stringValue.uppercaseString;
+                NSString *strKey = key.stringValue;
                 NSString *productKey = [self md5String:strEmail];
                 NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
 //                NSLog(@"strKey: %@", strKey);
 //                NSLog(@"calKey: %@", calKey);
+                NSData *data = [strKey dataUsingEncoding:NSUTF8StringEncoding];
+                NSLog(@"data: %@", [NSString stringWithUTF8String:[data bytes]]);
+//                NSData *encryptedData = ;
+//                NSLog(@"data: %@", [NSString stringWithUTF8String:[encryptedData bytes]]);
 
                 if([calKey isEqualToString:strKey]){
                     result = YES;
