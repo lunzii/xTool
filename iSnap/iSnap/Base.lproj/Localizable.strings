@@ -29,5 +29,4 @@ product_success_title = "Congratulations";
 product_success_msg = "Thank you for your puchase!";
 product_success_title = "Invalid Product Key";
 product_success_msg = "Please try again or contact our support team at support@napflux.com.";
-product_email = "E-Mail";
 product_key = "Product Key";

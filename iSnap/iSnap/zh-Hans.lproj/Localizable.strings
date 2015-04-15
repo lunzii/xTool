@@ -30,5 +30,4 @@ product_success_title = "恭喜";
 product_success_msg = "非常感谢你的支持！";
 product_failed_title = "注册码错误";
 product_failed_msg = "请重新输入或联系我们：support@napflux.com。";
-product_email = "电子邮箱";
 product_key = "注册码";

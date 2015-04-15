@@ -20,12 +20,11 @@ screenshot_snap_success = "Snap in Pasteboard.";
 screenshot_snap_fail = "Snap failed.";
 
 product_alert_title = "Please input your product key to contiune.";
-product_alert_msg = "Buy: http://www.napflux.com/buy-asnapx/";
+product_alert_msg = "Buy: <a href='http://www.napflux.com/buy-asnapx/'>http://www.napflux.com/buy-asnapx/</a>";
 product_alert_btn_sure = "OK";
 product_alert_btn_cancel = "Cancel";
 product_success_title = "Congratulations";
 product_success_msg = "Thank you for your puchase!";
 product_success_title = "Invalid Product Key";
 product_success_msg = "Please try again or contact our support team at support@napflux.com.";
-product_email = "E-Mail";
 product_key = "Product Key";

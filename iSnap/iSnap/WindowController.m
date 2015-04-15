@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 olunx. All rights reserved.
 //
 
-#import <CommonCrypto/CommonDigest.h>
 
 #import "WindowController.h"
 #import "TSTextField.h"
 #import "NSAttributedAlert.h"
+#import "EllipticLicense.h"
 
 #import <MBProgressHUD.h>
 
@@ -93,12 +93,10 @@
 }
 
 - (IBAction)clickedRefresh:(id)sender {
-    if(self.checkProduct){
-        if (self.checkDevice) {
-            [self takeScreenShot];
-        } else {
-            [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
-        }
+    if (self.checkDevice) {
+        [self takeScreenShot];
+    } else {
+        [self showTextView:NSLocalizedString(@"device_connect_false", nil)];
     }
 }
 
@@ -109,39 +107,40 @@
 - (BOOL) checkProduct {
     BOOL result = NO;
 
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"producta"]){
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"product"]){
         if(_refreshCount < 2){
             _refreshCount++;
             return YES;
         }else{
+            //dialog
             NSAttributedAlert *alert = [[NSAttributedAlert alloc] init];
             [alert addButtonWithTitle:NSLocalizedString(@"product_alert_btn_sure", nil)];
             [alert addButtonWithTitle:NSLocalizedString(@"product_alert_btn_cancel", nil)];
             [alert setMessageText:NSLocalizedString(@"product_alert_title", nil)];
             [alert setInformativeText:NSLocalizedString(@"product_alert_msg", nil) containsHtml:YES];
-            TSTextField *email = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 30, 300, 24)];
-            email.placeholderString = NSLocalizedString(@"product_email", nil);
-            TSTextField *key = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
+
+            TSTextField *key = [[TSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 48)];
             key.placeholderString = NSLocalizedString(@"product_key", nil);
-            NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 54)];
-            [view addSubview:email];
+            NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 48)];
             [view addSubview:key];
             [alert setAccessoryView:view];
             NSInteger button = [alert runModal];
-            NSLog(@"alert: %ld", (long)button);
             if (button == 1000) {
-                NSString *strEmail = [NSString stringWithFormat:@"%@+olunx%@", email.stringValue, @"2015"];
                 NSString *strKey = key.stringValue;
-                NSString *productKey = [self md5String:strEmail];
-                NSString *calKey = [productKey substringWithRange:NSMakeRange(4, productKey.length - 8)];
-//                NSLog(@"strKey: %@", strKey);
-//                NSLog(@"calKey: %@", calKey);
-                NSData *data = [strKey dataUsingEncoding:NSUTF8StringEncoding];
-                NSLog(@"data: %@", [NSString stringWithUTF8String:[data bytes]]);
-//                NSData *encryptedData = ;
-//                NSLog(@"data: %@", [NSString stringWithUTF8String:[encryptedData bytes]]);
 
-                if([calKey isEqualToString:strKey]){
+                NSString *userKey = @"";
+                NSString *productKey = @"";
+                NSRange range = [strKey rangeOfString:@"-"];
+                if(range.location != NSNotFound){
+                    userKey = [strKey substringWithRange:NSMakeRange(0, range.location)];
+                    productKey = [strKey substringWithRange:NSMakeRange(range.location + 1, strKey.length - range.location - 1)];
+//                    NSLog(@"userKey: %@ , productKey: %@", userKey, productKey);
+                }
+                //key
+                NSString *publicKey = @"0415674DE610107DD43E54D759AF4305F773374B6448F4D2A1D7FA6710";
+                EllipticLicense *license = [[EllipticLicense alloc] initWithPublicKey:publicKey];
+                BOOL keyResult = [license verifyLicenseKey:productKey forName:userKey];
+                if(keyResult){
                     result = YES;
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"product"];
                     NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"product_success_title", nil)
@@ -165,20 +164,6 @@
     }
 
     return result;
-}
-
-- (NSString *)md5String:(NSString *)value {
-    const char *cstr = [value UTF8String];
-    unsigned char result[16];
-    CC_MD5(cstr, strlen(cstr), result);
-
-    return [NSString stringWithFormat:
-            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
-            result[0], result[1], result[2], result[3],
-            result[4], result[5], result[6], result[7],
-            result[8], result[9], result[10], result[11],
-            result[12], result[13], result[14], result[15]
-    ];
 }
 
 - (BOOL)checkDevice {
@@ -389,6 +374,9 @@
 }
 
 - (IBAction)clickedSave:(id)sender {
+    if(!self.checkProduct){
+        return;
+    }
     __typeof(self) __weak weakSelf = self;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.contentView animated:YES];
     hud.dimBackground = YES;

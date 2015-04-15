@@ -10,6 +10,11 @@
 		C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C82F34BC1AD7D29100E130C3 /* TSTextField.m */; };
 		C83547781ADB9D6200BE0F00 /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C83547771ADB9D6200BE0F00 /* NSLabel.m */; };
 		C83547931ADBB52A00BE0F00 /* NSAttributedAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = C83547921ADBB52A00BE0F00 /* NSAttributedAlert.m */; };
+		C83D74451ADE65A300C87652 /* base32.c in Sources */ = {isa = PBXBuildFile; fileRef = C83D74421ADE65A300C87652 /* base32.c */; };
+		C83D74461ADE65A300C87652 /* elliptic_license.c in Sources */ = {isa = PBXBuildFile; fileRef = C83D74431ADE65A300C87652 /* elliptic_license.c */; };
+		C83D744C1ADE65B200C87652 /* EllipticLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = C83D74491ADE65B200C87652 /* EllipticLicense.m */; };
+		C83D744D1ADE65B200C87652 /* NSData+ELAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C83D744B1ADE65B200C87652 /* NSData+ELAdditions.m */; };
+		C83D744F1ADE660100C87652 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C83D744E1ADE660100C87652 /* libcrypto.dylib */; };
 		C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C853D58D1A90FBE90046A6F2 /* WindowController.m */; };
 		C8E4938D1A937A8C00EF062D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8E4938B1A937A8C00EF062D /* Localizable.strings */; };
 		C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FAFAC91A8F029400FDD7CB /* AppDelegate.m */; };
@@ -45,6 +50,15 @@
 		C83547771ADB9D6200BE0F00 /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
 		C83547911ADBB52A00BE0F00 /* NSAttributedAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedAlert.h; sourceTree = "<group>"; };
 		C83547921ADBB52A00BE0F00 /* NSAttributedAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedAlert.m; sourceTree = "<group>"; };
+		C83D74421ADE65A300C87652 /* base32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = base32.c; path = ../../ellipticlicense/c_api/base32.c; sourceTree = "<group>"; };
+		C83D74431ADE65A300C87652 /* elliptic_license.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = elliptic_license.c; path = ../../ellipticlicense/c_api/elliptic_license.c; sourceTree = "<group>"; };
+		C83D74441ADE65A300C87652 /* elliptic_license.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = elliptic_license.h; path = ../../ellipticlicense/c_api/elliptic_license.h; sourceTree = "<group>"; };
+		C83D74471ADE65B200C87652 /* EllipticLicense_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EllipticLicense_Prefix.pch; path = ../../ellipticlicense/Framework/EllipticLicense_Prefix.pch; sourceTree = "<group>"; };
+		C83D74481ADE65B200C87652 /* EllipticLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EllipticLicense.h; path = ../../ellipticlicense/Framework/EllipticLicense.h; sourceTree = "<group>"; };
+		C83D74491ADE65B200C87652 /* EllipticLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EllipticLicense.m; path = ../../ellipticlicense/Framework/EllipticLicense.m; sourceTree = "<group>"; };
+		C83D744A1ADE65B200C87652 /* NSData+ELAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ELAdditions.h"; path = "../../ellipticlicense/Framework/NSData+ELAdditions.h"; sourceTree = "<group>"; };
+		C83D744B1ADE65B200C87652 /* NSData+ELAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ELAdditions.m"; path = "../../ellipticlicense/Framework/NSData+ELAdditions.m"; sourceTree = "<group>"; };
+		C83D744E1ADE660100C87652 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		C853D58C1A90FBE90046A6F2 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		C853D58D1A90FBE90046A6F2 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		C8E493841A9379B200EF062D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83D744F1ADE660100C87652 /* libcrypto.dylib in Frameworks */,
 				C8FC070C1A9245F900720C6F /* libMBProgressHUD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C83D743F1ADE659600C87652 /* EllipticLiscense */ = {
+			isa = PBXGroup;
+			children = (
+				C83D744E1ADE660100C87652 /* libcrypto.dylib */,
+				C83D74471ADE65B200C87652 /* EllipticLicense_Prefix.pch */,
+				C83D74481ADE65B200C87652 /* EllipticLicense.h */,
+				C83D74491ADE65B200C87652 /* EllipticLicense.m */,
+				C83D744A1ADE65B200C87652 /* NSData+ELAdditions.h */,
+				C83D744B1ADE65B200C87652 /* NSData+ELAdditions.m */,
+				C83D74421ADE65A300C87652 /* base32.c */,
+				C83D74431ADE65A300C87652 /* elliptic_license.c */,
+				C83D74441ADE65A300C87652 /* elliptic_license.h */,
+			);
+			name = EllipticLiscense;
+			sourceTree = "<group>";
+		};
 		C8FAFABA1A8F029400FDD7CB = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +175,7 @@
 		C8FAFAEA1A8F02D800FDD7CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C83D743F1ADE659600C87652 /* EllipticLiscense */,
 				C8FC07011A9245E900720C6F /* MBProgressHUD.xcodeproj */,
 			);
 			name = Frameworks;
@@ -271,9 +303,13 @@
 				C82F34BD1AD7D29100E130C3 /* TSTextField.m in Sources */,
 				C853D58E1A90FBE90046A6F2 /* WindowController.m in Sources */,
 				C8FAFACC1A8F029400FDD7CB /* main.m in Sources */,
+				C83D74461ADE65A300C87652 /* elliptic_license.c in Sources */,
+				C83D744C1ADE65B200C87652 /* EllipticLicense.m in Sources */,
 				C83547781ADB9D6200BE0F00 /* NSLabel.m in Sources */,
 				C8FAFACA1A8F029400FDD7CB /* AppDelegate.m in Sources */,
+				C83D74451ADE65A300C87652 /* base32.c in Sources */,
 				C83547931ADBB52A00BE0F00 /* NSAttributedAlert.m in Sources */,
+				C83D744D1ADE65B200C87652 /* NSData+ELAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
