@@ -137,7 +137,7 @@
 //                    NSLog(@"userKey: %@ , productKey: %@", userKey, productKey);
                 }
                 //key
-                NSString *publicKey = @"0415674DE610107DD43E54D759AF4305F773374B6448F4D2A1D7FA6710";
+                NSString *publicKey = @"04416FC27C6C8FC6A563F1D24D064CC021E373AD9243F61EA32A5F0C79";
                 EllipticLicense *license = [[EllipticLicense alloc] initWithPublicKey:publicKey];
                 BOOL keyResult = [license verifyLicenseKey:productKey forName:userKey];
                 if(keyResult){
