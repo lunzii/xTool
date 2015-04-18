@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>微信游戏</title>
+    <script type="text/javascript">
+        var SCORE_LIMIT = 6000;
+        var APP_API_URL = "http://open.weixin.qq.com/";//后台接口
+        var APP_RANK_URL = "http://open.weixin.qq.com/";//排行榜页面
+        var APP_FOLLOW_URL = "http://open.weixin.qq.com/";//微信公众账号关注页面
+    </script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/createjs-2013.12.12.min.js"></script>
+    <script type="text/javascript" src="js/qipa_app.js"></script>
+    <script type="text/javascript" src="js/qipa_stage.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <style type="text/css">
+        html, body, canvas {
+            margin: 0px;
+            padding: 0px;
+            border: none;
+            text-align: center;
+            background-color: black;
+        }
+
+        canvas {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<canvas id="stage">
+    您的浏览器不支持html5, 请换用支持html5的浏览器。
+</canvas>
+<script language=javascript>
+    window.shareData = {
+        "imgUrl": "http://game2.id87.com/games/sqsdscj/icon.png",
+        "timeLineLink": "http://weixin.qq.com/",
+        "tTitle": "游戏名称",
+        "tContent": "游戏内容"
+    };
+    function request(strParame) {
+        var args = new Object( );
+        var query = location.search.substring(1);
+
+        var pairs = query.split("&"); // Break at ampersand
+        for(var i = 0; i < pairs.length; i++) {
+        var pos = pairs[i].indexOf('=');
+        if (pos == -1) continue;
+        var argname = pairs[i].substring(0,pos);
+        var value = pairs[i].substring(pos+1);
+        value = decodeURIComponent(value);
+        args[argname] = value;
+        }
+        return args[strParame];
+    }
+    function dp_submitScore(score){//数完钱后调用
+        if(score > 0){
+            $.getJSON(APP_API_URL + "?score=" + score + "&openid=" + request("openid"));
+        }
+    }
+    function clickMore() {
+        window.location = APP_RANK_URL;
+    }
+    function dp_share() {
+        qipaStage.showShareTip();
+    }
+    function showAd() {
+    }
+    function hideAd() {
+    }
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": window.shareData.imgUrl,
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, onShareComplete);
+        });
+
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, onShareComplete);
+        });
+    }, false);
+</script>
+</body>
+</html>
