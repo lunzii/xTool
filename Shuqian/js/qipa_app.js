@@ -1,7 +1,7 @@
 
 if (void 0 == QIPA_DEBUG) var QIPA_DEBUG = !1;
 if (void 0 == GID) var GID = "qipa";
-if (void 0 == APP_API_URL) var APP_API_URL = /localhost/.test(location.host) ? "http://localhost:8000/": "http://wx.local.com/app/";//后台接口
+if (void 0 == APP_API_URL) var APP_API_URL = /localhost/.test(location.host) ? "http://localhost:8000/": "http://mp.weixin.qq.com/app/";//后台接口
 if (void 0 == APP_LIST_URL) var APP_LIST_URL = "http://weixin.qq.com/";//右下角按钮
 if (void 0 == APP_FOLLOW_URL) var APP_FOLLOW_URL = "http://mp.weixin.qq.com/";//微信公众账号关注页面
 if (void 0 == ENABLE_SHARE) var ENABLE_SHARE = !0;
